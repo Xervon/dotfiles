@@ -1,0 +1,16 @@
+rofi.theme:            /usr/share/rofi/themes/solarized_alternate.rasi
+rofi.font:             Source Code Pro 16
+
+rofi.modi:             drun,window,run,ssh
+
+rofi.fixed-num-lines:  false
+rofi.width:            30
+rofi.yoffset:          -200
+
+rofi.run-command:      fish -c '{cmd}'
+rofi.run-list-command: fish -c functions
+
+rofi.kb-accept-entry:  Return,Control+l
+rofi.kb-remove-to-eol: Alt+d
+rofi.kb-row-down:      Control+j
+rofi.kb-row-up:        Control+k

@@ -1,3 +1,23 @@
-- clean: []
-- link: {}
-- shell: []
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- link:
+    ~/.cache/dotfiles: ''
+    ~/.emacs.d:
+    ~/.spacemacs:
+    ~/.Xresources:
+    ~/.xinitrc:
+    ~/.profile:
+    ~/.tmux.conf:
+    ~/.config/fish: config/fish
+    ~/.config/bspwm: config/bspwm
+    ~/.config/sxhkd: config/sxhkd
+    ~/.config/rofi: config/rofi
+    ~/.config/systemd: config/systemd
+    ~/.config/qutebrowser: config/qutebrowser
+
+- shell:
+    - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]
+    - [ /usr/bin/env fish -c 'fisher', Installing fish plugins ]

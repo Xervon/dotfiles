@@ -1,0 +1,10 @@
+[Unit]
+Name=Emacs Daemon
+
+[Service]
+ExecStart=/usr/bin/emacs --fg-daemon
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

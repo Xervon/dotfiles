@@ -1,0 +1,10 @@
+[Unit]
+Description=urxvt daemon socket
+Documentation=man:urxvtd(1) man:urxvt(1)
+
+[Socket]
+ListenStream=%t/urxvtd-%H
+Service=urxvtd.service
+
+[Install]
+WantedBy=sockets.target

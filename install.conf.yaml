@@ -17,6 +17,7 @@
     ~/.config/rofi: config/rofi
     ~/.config/systemd: config/systemd
     ~/.config/qutebrowser: config/qutebrowser
+    ~/.config/neofetch: config/neofetch
 
 - shell:
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]

@@ -1,3 +1,9 @@
+function fish_greeting
+	fortune -as;
+	echo;
+	neofetch;
+end
+
 function l
 	command ls -lahtp --color $argv;
 end

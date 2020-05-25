@@ -68,7 +68,7 @@ keybinds conf = let
     ] ^++^
 
     subKeys "Launchers"
-    [ (        "M-<Space>"            , addName "Launcher"                                  $ shellPrompt $ P.fuzzy P.defaultPrompt)
+    [ (        "M-<Space>"            , addName "Launcher"                                  $ shellPrompt $ P.autocomplete $ P.fuzzy P.defaultPrompt)
     , (        "M-<Return>"           , addName "Terminal"                                  $ spawn C.terminal)
     , (        "M-S-<Return>"         , addName "Editor"                                    $ spawn C.editor)
     , (        "M-s"                  , addName "NSP Music"                                 $ namedScratchpadAction SP.scratchPads "musicPlayer")

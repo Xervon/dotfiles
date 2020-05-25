@@ -3,6 +3,7 @@ module Config.Prompts
 , warnPrompt
 , dangerPrompt
 , fuzzy
+, autocomplete
 ) where
 
 import qualified Config.Colors   as CC
@@ -42,3 +43,7 @@ fuzzy :: XPConfig -> XPConfig
 fuzzy c = c { searchPredicate = fuzzyMatch
             , sorter          = fuzzySort
             }
+
+autocomplete :: XPConfig -> XPConfig
+autocomplete c = c { autoComplete = C.promptAutoCompleteTimer
+                   }

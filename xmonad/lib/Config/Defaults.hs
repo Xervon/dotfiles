@@ -26,6 +26,7 @@ module Config.Defaults
 , topBarHeight
 , promptPosition
 , promptBorderWidth
+, promptAutoCompleteTimer
 , modMask
 , workspaces
 , smallMonWidth
@@ -99,6 +100,7 @@ topBarHeight                 = 10
 
 promptPosition               = Top
 promptBorderWidth            = 0
+promptAutoCompleteTimer      = Just 500
 
 modMask                      = mod4Mask
 
@@ -147,6 +149,7 @@ topBarHeight                 :: Word32
 
 promptPosition               :: XPPosition
 promptBorderWidth            :: Dimension
+promptAutoCompleteTimer      :: Maybe Int
 
 modMask                      :: KeyMask
 workspaces                   :: [Workspace]

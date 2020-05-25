@@ -5,21 +5,26 @@
 
 - link:
     ~/.cache/dotfiles: ''
+
     ~/.emacs.d:
     ~/.spacemacs:
-    ~/.Xresources:
-    ~/.xinitrc:
-    ~/.profile:
     ~/.tmux.conf:
-    ~/.config/fish: config/fish
+    ~/.xinitrc:
+    ~/.xmonad:
+    ~/.Xprofile:
+    ~/.Xresources:
+
+    ~/.config/alacritty: config/alacritty
     ~/.config/bspwm: config/bspwm
-    ~/.config/sxhkd: config/sxhkd
-    ~/.config/rofi: config/rofi
-    ~/.config/systemd: config/systemd
-    ~/.config/qutebrowser: config/qutebrowser
+    ~/.config/fish: config/fish
     ~/.config/neofetch: config/neofetch
+    ~/.config/qutebrowser: config/qutebrowser
+    ~/.config/rofi: config/rofi
+    ~/.config/sxhkd: config/sxhkd
+    ~/.config/systemd: config/systemd
 
 - shell:
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]
     - [ /usr/bin/env fish -c 'fisher', Installing fish plugins ]
     - [ /usr/bin/env fish -c 'fish_update_completions', Update auto-generated fish completions ]
+    - [ "$HOME/.cache/dotfiles/xmonad/rebuild-xmobar.sh" ]

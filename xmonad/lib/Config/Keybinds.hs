@@ -17,7 +17,6 @@ import XMonad.Actions.CopyWindow
 import XMonad.Actions.DynamicWorkspaces
 import XMonad.Actions.MessageFeedback
 import XMonad.Actions.Navigation2D
-import XMonad.Actions.PerWorkspaceKeys
 import XMonad.Actions.Promote
 import XMonad.Actions.WithAll
 import XMonad.Hooks.UrgencyHook

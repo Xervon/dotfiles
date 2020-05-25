@@ -19,8 +19,6 @@ function e
 	command emacsclient -n $argv
 end
 
-set -gx SSH_AUTH_SOCK '/var/run/user/'(id -u)'/gnupg/S.gpg-agent.ssh'
-
 set -gx PATH "$HOME/.local/bin" $PATH
 
 set -gx EDITOR /usr/bin/emacsclient

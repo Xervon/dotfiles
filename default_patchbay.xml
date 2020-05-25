@@ -1,0 +1,150 @@
+<!DOCTYPE patchbay>
+<patchbay name="default_patchbay" version="0.6.1">
+ <output-sockets>
+  <socket type="jack-audio" name="system" exclusive="off" client="system">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+   <plug>capture_3</plug>
+   <plug>capture_4</plug>
+   <plug>capture_5</plug>
+   <plug>capture_6</plug>
+   <plug>capture_7</plug>
+   <plug>capture_8</plug>
+   <plug>capture_9</plug>
+   <plug>capture_10</plug>
+   <plug>capture_11</plug>
+   <plug>capture_12</plug>
+   <plug>capture_13</plug>
+   <plug>capture_14</plug>
+   <plug>capture_15</plug>
+   <plug>capture_16</plug>
+   <plug>capture_17</plug>
+   <plug>capture_18</plug>
+  </socket>
+  <socket type="jack-audio" name="out_music" exclusive="off" client="out_music">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket type="jack-audio" name="out_web" exclusive="off" client="out_web">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket type="jack-audio" name="out_game" exclusive="off" client="out_game">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket type="jack-audio" name="out_other" exclusive="off" client="out_other">
+   <plug>mono</plug>
+  </socket>
+  <socket type="jack-audio" name="out_voice" exclusive="off" client="out_voice">
+   <plug>mono</plug>
+  </socket>
+  <socket type="jack-audio" name="out_voice_rtn" exclusive="off" client="out_voice_rtn">
+   <plug>mono</plug>
+  </socket>
+  <socket type="jack-audio" name="out_game_rtn" exclusive="off" client="out_game_rtn">
+   <plug>mono</plug>
+  </socket>
+  <socket type="jack-audio" name="system 2" exclusive="off" client="system">
+   <plug>capture_3</plug>
+   <plug>capture_4</plug>
+  </socket>
+  <socket type="jack-audio" name="system 3" exclusive="off" client="system">
+   <plug>capture_8</plug>
+  </socket>
+  <socket type="jack-audio" name="system 4" exclusive="off" client="system">
+   <plug>capture_7</plug>
+  </socket>
+  <socket type="jack-audio" name="system 5" exclusive="off" client="system">
+   <plug>capture_5</plug>
+   <plug>capture_6</plug>
+  </socket>
+  <socket type="alsa-midi" name="Midi Through" exclusive="off" client="Midi Through">
+   <plug>Midi Through Port-0</plug>
+  </socket>
+  <socket type="alsa-midi" name="X18/XR18" exclusive="off" client="X18/XR18">
+   <plug>X18/XR18 MIDI 1</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket type="jack-audio" name="system" exclusive="off" client="system">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+   <plug>playback_5</plug>
+   <plug>playback_6</plug>
+   <plug>playback_7</plug>
+   <plug>playback_8</plug>
+   <plug>playback_9</plug>
+   <plug>playback_10</plug>
+   <plug>playback_11</plug>
+   <plug>playback_12</plug>
+   <plug>playback_13</plug>
+   <plug>playback_14</plug>
+   <plug>playback_15</plug>
+   <plug>playback_16</plug>
+   <plug>playback_17</plug>
+   <plug>playback_18</plug>
+  </socket>
+  <socket type="jack-audio" name="in_game" exclusive="off" client="in_game">
+   <plug>mono</plug>
+  </socket>
+  <socket type="jack-audio" name="in_voice" exclusive="off" client="in_voice">
+   <plug>mono</plug>
+  </socket>
+  <socket type="jack-audio" name="in_gtr_raw" exclusive="off" client="in_gtr_raw">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket type="jack-audio" name="in_gtr_amp" exclusive="off" client="in_gtr_amp">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket type="jack-audio" name="system 2" exclusive="off" client="system">
+   <plug>playback_8</plug>
+  </socket>
+  <socket type="jack-audio" name="system 3" exclusive="off" client="system">
+   <plug>playback_7</plug>
+  </socket>
+  <socket type="jack-audio" name="system 4" exclusive="off" client="system">
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+  </socket>
+  <socket type="jack-audio" name="system 5" exclusive="off" client="system">
+   <plug>playback_13</plug>
+   <plug>playback_14</plug>
+  </socket>
+  <socket type="jack-audio" name="system 6" exclusive="off" client="system">
+   <plug>playback_5</plug>
+   <plug>playback_6</plug>
+  </socket>
+  <socket type="jack-audio" name="system 7" exclusive="off" client="system">
+   <plug>playback_11</plug>
+  </socket>
+  <socket type="jack-audio" name="system 8" exclusive="off" client="system">
+   <plug>playback_12</plug>
+  </socket>
+  <socket type="alsa-midi" name="Midi Through" exclusive="off" client="Midi Through">
+   <plug>Midi Through Port-0</plug>
+  </socket>
+  <socket type="alsa-midi" name="X18/XR18" exclusive="off" client="X18/XR18">
+   <plug>X18/XR18 MIDI 1</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable input="system 4" type="jack-audio" output="out_music"/>
+  <cable input="system 5" type="jack-audio" output="out_web"/>
+  <cable input="system 6" type="jack-audio" output="out_game"/>
+  <cable input="system 2" type="jack-audio" output="out_other"/>
+  <cable input="system 3" type="jack-audio" output="out_voice"/>
+  <cable input="system 7" type="jack-audio" output="out_voice_rtn"/>
+  <cable input="system 8" type="jack-audio" output="out_game_rtn"/>
+  <cable input="in_gtr_raw" type="jack-audio" output="system 2"/>
+  <cable input="in_game" type="jack-audio" output="system 3"/>
+  <cable input="in_voice" type="jack-audio" output="system 4"/>
+  <cable input="in_gtr_amp" type="jack-audio" output="system 5"/>
+ </cables>
+</patchbay>
+

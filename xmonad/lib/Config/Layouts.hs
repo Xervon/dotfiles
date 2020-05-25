@@ -10,6 +10,7 @@ import XMonad ((|||), Typeable, Window)
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout
 import XMonad.Layout.Accordion
+import XMonad.Layout.AutoMaster
 import XMonad.Layout.BoringWindows
 import XMonad.Layout.ComboP
 import XMonad.Layout.Fullscreen
@@ -81,8 +82,13 @@ layoutHook = fullscreenFloat
     tallAccordion =
         named "Tall Accordion"
       $ defaultModifiers
-      $ layoutN 1 (relBox (2/5) 0 1     1) (Just $ relBox 0 0 1 1) Full
-      $ layoutAll (relBox 0     0 (2/5) 1)                         Accordion
+      $ Mirror $ autoMaster 1 (2/100)
+      $ Mirror Accordion
+    -- tallAccordion' =
+    --     named "Tall Accordion"
+    --   $ defaultModifiers
+    --   $ layoutN 1 (relBox (2/5) 0 1     1) (Just $ relBox 0 0 1 1) Full
+    --   $ layoutAll (relBox 0     0 (2/5) 1)                         Accordion
 
     flex =
         named "Flex"

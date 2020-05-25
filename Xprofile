@@ -1,1 +1,2 @@
 export RXVT_SOCKET="/var/run/user/1000/urxvtd-localhost"
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"

@@ -56,8 +56,8 @@ keybinds conf = let
                                    else W.float w (W.RationalRect (1/3) (1/4) (1/2) (4/5)) s)
   in
     subKeys "System"
-    [ (        "M-q"                  , addName "Restart XMonad"                            $ spawn "\"$HOME/.xmonad/rebuild-xmobar.sh\" && xmonad --restart")
-    , (        "M-C-q"                , addName "Rebuild & restart XMonad"                  $ spawn "\"$HOME/.xmonad/rebuild-xmobar.sh\" && xmonad --recompile && xmonad --restart")
+    [ (        "M-q"                  , addName "Restart XMonad"                            $ spawn "\"$HOME/.xmonad/rebuild.sh\" && xmonad --restart")
+    , (        "M-C-q"                , addName "Rebuild & restart XMonad"                  $ spawn "\"$HOME/.xmonad/rebuild.sh\" && xmonad --restart")
     , (        "M-S-q"                , addName "Quit XMonad"                               $ confirmPrompt P.dangerPrompt "Quit XMonad?" $ io (exitWith ExitSuccess))
     , (        "M-x"                  , addName "Lock screen"                               $ spawn C.lock)
     ] ^++^
@@ -94,11 +94,11 @@ keybinds conf = let
       , (      "M1-k"               , addName "Focus previous window"                      $ windows W.focusUp)
       , (      "M-M1-j"             , addName "Focus previous window"                      $ windows W.swapDown)
       , (      "M-M1-k"             , addName "Focus previous window"                      $ windows W.swapUp)
-      , (      "M1-S-j"             , addName "Move next window to current stack pos"      $ sequence_
+      , (      "M1-S-j"             , addName "Move previous window to current stack pos"  $ sequence_
                                                                                               [ windows W.swapUp
                                                                                               , windows W.focusDown
                                                                                               ])
-      , (      "M1-S-k"             , addName "Move previous window to current stack pos"  $ sequence_
+      , (      "M1-S-k"             , addName "Move next window to current stack pos"      $ sequence_
                                                                                               [ windows W.focusUp
                                                                                               , windows W.swapDown
                                                                                               ])
@@ -128,6 +128,7 @@ keybinds conf = let
       ++ zipM "M-"                            "View workspace"                              wsKeys [0..] (withNthWorkspace W.greedyView)
       ++ zipM "M-S-"                          "Move window to workspace"                    wsKeys [0..] (withNthWorkspace W.shift)
       ++ zipM "M-d "                          "Copy window to workspace"                    wsKeys [0..] (withNthWorkspace copy)
+      ++ zipM "M-d M-"                        "Copy window to workspace"                    wsKeys [0..] (withNthWorkspace copy)
     ) ^++^
 
     subKeys "Layout Management"
@@ -140,12 +141,10 @@ keybinds conf = let
     , (       "M-f"                 , addName "Toggle fullscreen"                         $ sequence_ [ (withFocused $ windows . W.sink)
                                                                                                       , (sendMessage $ MT.Toggle FULL)
                                                                                                       ])
-    , (       "M-S-f"               , addName "Toggle fake fullscreen"                    $ withFocused (\w ->
-                                                                                                            sequence_ [ (P.sendKey P.noModMask xK_F11)
-                                                                                                                      , promote
-                                                                                                                      , promote
-                                                                                                                      , windows $ W.focusWindow w
-                                                                                                                      ]))
+    , (       "M-S-f"               , addName "Toggle fake fullscreen"                    $ sequence_ [ (P.sendKey P.noModMask xK_F11)
+                                                                                                      , tryMsgR (ExpandTowards L) (Shrink)
+                                                                                                      , tryMsgR (ExpandTowards R) (Expand)
+                                                                                                      ])
     ]
 
 mousebinds :: (XConfig Layout -> M.Map (ButtonMask, Button) (Window -> X ()))

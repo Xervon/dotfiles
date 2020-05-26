@@ -3,7 +3,7 @@ module Font
 , Style (..)
 ) where
 
-import Data.List.Extra
+import Data.Char
 
 data Style = Regular
            | Bold
@@ -12,10 +12,13 @@ data Style = Regular
 
 data Font = Font
   { name      :: String
-  , pixelSize :: Int
+  , size      :: Int
   , style     :: Style
   , antialias :: Bool
   } deriving (Eq)
 
 instance Show Font where
-  showsPrec _ (Font n s st a) = showString $ "xft:" ++ n ++ ":pixelsize=" ++ (show s) ++ ":" ++ (lower $ show st) ++ ":antialias=" ++ (lower $ show a)
+  showsPrec _ (Font n s st a) = showString $ "xft:" ++ n ++ ":size=" ++ (show s) ++ ":" ++ (lower $ show st) ++ ":antialias=" ++ (lower $ show a)
+    where
+      lower (c:cs) = toLower c : (lower cs)
+      lower ([])  = []

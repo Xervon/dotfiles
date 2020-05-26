@@ -2,10 +2,13 @@ module Color
 ( Color (..)
 , showWebColor
 , showCColor
+, getAlphaColour
 ) where
 
 import GHC.Word
 import Numeric (showHex)
+import qualified Data.Colour as Col
+import qualified Data.Colour.SRGB as SRGB
 
 data Color =
   Color {
@@ -27,3 +30,6 @@ showWebColor = ('#' :) . show
 
 showCColor :: Color -> String
 showCColor = ("0x" ++) . show
+
+getAlphaColour :: Color -> Col.AlphaColour Double
+getAlphaColour c = Col.opaque $ SRGB.sRGBBounded (r c) (g c) (b c)

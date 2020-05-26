@@ -5,6 +5,7 @@ module Config.Defaults
 , barAlpha
 , barHeight
 , barWidthPercent
+, shell
 , terminal
 , lock
 , editor
@@ -71,8 +72,10 @@ barAlpha                     = 215
 barHeight                    = 30
 barWidthPercent              = 95
 
--- terminal                     = "urxvtc -e tmux"
-terminal                     = "alacritty"
+shell                        = [ "/usr/bin/tmux" ]
+-- terminal                     = "urxvtc -e " ++ (unwords shell)
+-- terminal                     = "alacritty"
+terminal                     = "$HOME/.xmonad/termonad"
 lock                         = "slock"
 editor                       = "emacsclient -c"
 snapshot                     = "flameshot gui"
@@ -81,7 +84,7 @@ volumeGui                    = ("dex /usr/share/applications/pavucontrol.desktop
 jackGui                      = ("dex /usr/share/applications/qjackctl.desktop"   , "QJackCtl")
 musicPlayer                  = ("dex /usr/share/applications/spotify.desktop"    , "Spotify")
 
-font                         = Font "SourceCode Pro" 20 Regular True
+font                         = Font "SourceCode Pro" 13 Regular True
 
 smartGaps                    = True
 outerGap                     = Border 5 5 5 5
@@ -121,6 +124,7 @@ barAlpha                     :: Int
 barHeight                    :: Int
 barWidthPercent              :: Int
 
+shell                        :: [String]
 terminal                     :: String
 lock                         :: String
 editor                       :: String

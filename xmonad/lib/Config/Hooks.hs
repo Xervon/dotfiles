@@ -62,10 +62,10 @@ manageHook =
 
 eventHook :: XConfig l -> Event -> X All
 eventHook conf = docksEventHook
-          <+> fadeWindowsEventHook
-          <+> dynamicTitle myDynHook
-          <+> handleEventHook conf
-          <+> XMonad.Layout.Fullscreen.fullscreenEventHook
+             <+> fadeWindowsEventHook
+             <+> dynamicTitle myDynHook
+             <+> handleEventHook conf
+             <+> XMonad.Layout.Fullscreen.fullscreenEventHook
   where
     myDynHook = composeAll []
 
@@ -107,6 +107,7 @@ fadeHook = composeAll
 
 startupHook :: X ()
 startupHook = do
+  docksStartupHook
   mapM_ spawnOnce C.autostart
 
 -- from https://pbrisbin.com/posts/using_notify_osd_for_xmonad_notifications/

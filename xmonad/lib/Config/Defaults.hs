@@ -1,5 +1,6 @@
 module Config.Defaults
 ( Workspace (..)
+, ScratchpadConfig (..)
 , autostart
 , bar
 , barAlpha
@@ -11,11 +12,7 @@ module Config.Defaults
 , editor
 , webBrowser
 , snapshot
-, nsVolumeGui
-, nsMusicPlayer
-, nsSteam
-, nsCalculator
-, nsWhatsApp
+, namedScratchpads
 , font
 , smartGaps
 , outerGap
@@ -46,8 +43,10 @@ import GHC.Word (Word32)
 
 import XMonad (Dimension, KeyMask, mod4Mask, X)
 import XMonad.Actions.Navigation2D
+import XMonad.Config.Prime (ManageHook, Query, className, (=?))
 import XMonad.Layout.Spacing (Border (..))
 import XMonad.Prompt hiding (font, promptBorderWidth)
+import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
 
 data Workspace
@@ -63,6 +62,15 @@ data Workspace
   | NINE
   deriving (Enum, Eq, Show, Read)
 workspaces                   = [ DEV, QUTE, WEB, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO ]
+
+data ScratchpadConfig = ScratchpadConfig
+  { name    :: String
+  , command :: String
+  , idPred  :: Query Bool
+  , manage  :: ManageHook
+  , keybind :: String
+  , help    :: String
+  }
 
 autostart                    =
                              [ (spawnOnce,              "/usr/bin/picom &")
@@ -91,11 +99,12 @@ editor                       = "/usr/bin/emacsclient -c"
 webBrowser                   = "dex /usr/share/applications/firefox.desktop"
 snapshot                     = "/usr/bin/flameshot gui"
 
-nsVolumeGui                  = ("dex /usr/share/applications/pavucontrol.desktop"  , "Pavucontrol")
-nsMusicPlayer                = ("dex /usr/share/applications/spotify.desktop"      , "Spotify")
-nsSteam                      = ("dex /usr/share/applications/steam.desktop"        , "Steam")
-nsCalculator                 = ("dex /usr/share/applications/qalculate-gtk.desktop", "Qalculate-gtk")
-nsWhatsApp                   = ("/usr/bin/env surf -LW 'whatsapp' 'https://web.whatsapp.com'", "whatsapp")
+namedScratchpads             = [ ScratchpadConfig "volumegui"  "dex /usr/share/applications/pavucontrol.desktop"             (className =? "Pavucontrol"  ) defaultFloating "M-v" "Pulse Config"
+                               , ScratchpadConfig "spotify"    "dex /usr/share/applications/spotify.desktop"                 (className =? "Spotify"      ) nonFloating     "M-s" "Spotify"
+                               , ScratchpadConfig "steam"      "dex /usr/share/applications/steam.desktop"                   (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
+                               , ScratchpadConfig "calculator" "dex /usr/share/applications/qalculate-gtk.desktop"           (className =? "Qalculate-gtk") defaultFloating "M-c" "Calculator"
+                               , ScratchpadConfig "whatsapp"   "/usr/bin/env surf -LW 'whatsapp' 'https://web.whatsapp.com'" (className =? "whatsapp"     ) nonFloating     "M-w" "WhatsApp"
+                               ]
 
 font                         = Font "SourceCode Pro" 13 Regular True
 
@@ -144,10 +153,7 @@ editor                       :: String
 webBrowser                   :: String
 snapshot                     :: String
 
-nsVolumeGui                  :: (String, String)
-nsMusicPlayer                :: (String, String)
-nsSteam                      :: (String, String)
-nsCalculator                 :: (String, String)
+namedScratchpads             :: [ScratchpadConfig]
 
 font                         :: Font
 

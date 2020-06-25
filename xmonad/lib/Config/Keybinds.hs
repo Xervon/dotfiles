@@ -71,12 +71,10 @@ keybinds conf = let
     , (        "M-<Return>"           , addName "Terminal"                                  $ spawn C.terminal)
     , (        "M-S-<Return>"         , addName "Editor"                                    $ spawn C.editor)
     , (        "M-w"                  , addName "Web browser"                               $ spawn C.webBrowser)
-    , (        "M-s"                  , addName "NSP Music"                                 $ namedScratchpadAction SP.scratchPads "musicPlayer")
-    , (        "M-v"                  , addName "NSP Pulse config"                          $ namedScratchpadAction SP.scratchPads "audioControl")
-    , (        "M-S-s"                , addName "NSP Steam"                                 $ namedScratchpadAction SP.scratchPads "steam")
-    , (        "M-c"                  , addName "NSP Calculator"                            $ namedScratchpadAction SP.scratchPads "calculator")
-    , (        "M-S-w"                , addName "NSP WhatsApp"                              $ namedScratchpadAction SP.scratchPads "whatsapp")
     ] ^++^
+
+    subKeys "Scratchpads"
+    (map (\c -> (C.keybind c, addName (C.help c) $ namedScratchpadAction SP.scratchPads (C.name c))) C.namedScratchpads) ^++^
 
     subKeys "Windows"
     ( [ (      "M-<Backspace>"      , addName "Close window"                               $ kill1)

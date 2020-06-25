@@ -8,3 +8,5 @@ xmonad/prompt-history
 xmonad/xmonad.errors
 xmonad/xmonad-x86_64-linux
 xmonad/xmobar
+xmonad/termonad
+xmonad/taffybar

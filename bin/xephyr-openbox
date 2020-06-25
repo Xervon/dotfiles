@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+/usr/bin/env Xephyr -br -ac -noreset -screen 1920x1080 :1 &
+export DISPLAY=:1
+openbox-session
+kill %1

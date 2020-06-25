@@ -73,16 +73,16 @@ data ScratchpadConfig = ScratchpadConfig
   }
 
 autostart                    =
-                             [ (spawnOnce,              "/usr/bin/picom &")
-                             , (spawnOnce,              "/usr/bin/unclutter &")
-                             , (spawnOnce,              "/usr/bin/xautolock &")
-                             , (spawnOnce,              "/usr/bin/flameshot &")
-                             , (spawnOnce,              "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &")
-                             , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
+  [ (spawnOnce,              "/usr/bin/picom &")
+  , (spawnOnce,              "/usr/bin/unclutter &")
+  , (spawnOnce,              "/usr/bin/xautolock &")
+  , (spawnOnce,              "/usr/bin/flameshot &")
+  , (spawnOnce,              "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &")
+  , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
 
-                             , (spawnOnce,              "/usr/bin/dex /usr/share/applications/steam.desktop")
-                             , (spawnOnOnce $ show WEB, "/usr/bin/dex /usr/share/applications/firefox.desktop")
-                             ]
+  , (spawnOnce,              "/usr/bin/dex /usr/share/applications/steam.desktop")
+  , (spawnOnOnce $ show WEB, "/usr/bin/dex /usr/share/applications/firefox.desktop")
+  ]
 
 -- bar                          = "/usr/bin/taffybar"
 bar                          = "\"$HOME/.xmonad/xmobar\""
@@ -99,12 +99,13 @@ editor                       = "/usr/bin/emacsclient -c"
 webBrowser                   = "dex /usr/share/applications/firefox.desktop"
 snapshot                     = "/usr/bin/flameshot gui"
 
-namedScratchpads             = [ ScratchpadConfig "volumegui"  "dex /usr/share/applications/pavucontrol.desktop"             (className =? "Pavucontrol"  ) defaultFloating "M-v" "Pulse Config"
-                               , ScratchpadConfig "spotify"    "dex /usr/share/applications/spotify.desktop"                 (className =? "Spotify"      ) nonFloating     "M-s" "Spotify"
-                               , ScratchpadConfig "steam"      "dex /usr/share/applications/steam.desktop"                   (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
-                               , ScratchpadConfig "calculator" "dex /usr/share/applications/qalculate-gtk.desktop"           (className =? "Qalculate-gtk") defaultFloating "M-c" "Calculator"
-                               , ScratchpadConfig "whatsapp"   "/usr/bin/env surf -LW 'whatsapp' 'https://web.whatsapp.com'" (className =? "whatsapp"     ) nonFloating     "M-w" "WhatsApp"
-                               ]
+namedScratchpads             =
+  [ ScratchpadConfig "volumegui"  "dex /usr/share/applications/pavucontrol.desktop"             (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
+  , ScratchpadConfig "spotify"    "dex /usr/share/applications/spotify.desktop"                 (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
+  , ScratchpadConfig "steam"      "dex /usr/share/applications/steam.desktop"                   (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
+  , ScratchpadConfig "calculator" "dex /usr/share/applications/qalculate-gtk.desktop"           (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
+  , ScratchpadConfig "whatsapp"   "/usr/bin/env surf -LW 'whatsapp' 'https://web.whatsapp.com'" (className =? "whatsapp"     ) nonFloating     "M-w"   "WhatsApp"
+  ]
 
 font                         = Font "SourceCode Pro" 13 Regular True
 

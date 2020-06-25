@@ -9,7 +9,9 @@ import XMonad.Util.NamedScratchpad
 
 scratchPads :: [NamedScratchpad]
 scratchPads =
-  [ (NS "audioControl" (fst C.volumeGui)   (className =? (snd C.volumeGui)))   defaultFloating
-  , (NS "jackControl"  (fst C.jackGui  )   (className =? (snd C.jackGui)))     defaultFloating
-  , (NS "musicPlayer"  (fst C.musicPlayer) (className =? (snd C.musicPlayer))) nonFloating
+  [ (NS "audioControl" (fst C.nsVolumeGui)   (className =? (snd C.nsVolumeGui)))   defaultFloating
+  , (NS "musicPlayer"  (fst C.nsMusicPlayer) (className =? (snd C.nsMusicPlayer))) nonFloating
+  , (NS "steam"        (fst C.nsSteam)       (className =? (snd C.nsSteam)))       nonFloating
+  , (NS "calculator"   (fst C.nsCalculator)  (className =? (snd C.nsCalculator)))  defaultFloating
+  , (NS "whatsapp"     (fst C.nsWhatsApp)    (className =? (snd C.nsWhatsApp)))    nonFloating
   ]

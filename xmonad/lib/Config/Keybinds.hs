@@ -15,6 +15,7 @@ import qualified Data.Map as M
 import XMonad
 import XMonad.Actions.CopyWindow
 import XMonad.Actions.DynamicWorkspaces
+import XMonad.Actions.FlexibleManipulate
 import XMonad.Actions.MessageFeedback
 import XMonad.Actions.Navigation2D
 import XMonad.Actions.Promote
@@ -38,7 +39,7 @@ import qualified XMonad.StackSet as W
 keybinds :: XConfig Layout -> [((KeyMask, KeySym), NamedAction)]
 keybinds conf = let
   subKeys str ks = subtitle str : mkNamedKeymap conf ks
-  wsKeys  = map show $ [1..9] ++ [0]
+  wsKeys  = map show $ ([1..9] ++ [0] :: [Int])
   dirKeys = ["j", "k", "h", "l"]
   dirs    = [ D ,  U ,  L ,  R ]
 
@@ -57,22 +58,24 @@ keybinds conf = let
   in
     subKeys "System"
     [ (        "M-q"                  , addName "Restart XMonad"                            $ spawn "\"$HOME/.xmonad/rebuild.sh\" && xmonad --restart")
-    , (        "M-C-q"                , addName "Rebuild & restart XMonad"                  $ spawn "\"$HOME/.xmonad/rebuild.sh\" && xmonad --restart")
     , (        "M-S-q"                , addName "Quit XMonad"                               $ confirmPrompt P.dangerPrompt "Quit XMonad?" $ io (exitWith ExitSuccess))
     , (        "M-x"                  , addName "Lock screen"                               $ spawn C.lock)
     ] ^++^
 
     subKeys "Actions"
-    [ (        "M-S-s"                , addName "Capture screen"                            $ spawn C.snapshot)
+    [ (        "M-S-w"                , addName "Capture screen"                            $ spawn C.snapshot)
     ] ^++^
 
     subKeys "Launchers"
     [ (        "M-<Space>"            , addName "Launcher"                                  $ shellPrompt $ P.autocomplete $ P.fuzzy P.defaultPrompt)
     , (        "M-<Return>"           , addName "Terminal"                                  $ spawn C.terminal)
     , (        "M-S-<Return>"         , addName "Editor"                                    $ spawn C.editor)
+    , (        "M-w"                  , addName "Web browser"                               $ spawn C.webBrowser)
     , (        "M-s"                  , addName "NSP Music"                                 $ namedScratchpadAction SP.scratchPads "musicPlayer")
     , (        "M-v"                  , addName "NSP Pulse config"                          $ namedScratchpadAction SP.scratchPads "audioControl")
-    , (        "M-S-v"                , addName "NSP Jack config"                           $ namedScratchpadAction SP.scratchPads "jackControl")
+    , (        "M-S-s"                , addName "NSP Steam"                                 $ namedScratchpadAction SP.scratchPads "steam")
+    , (        "M-c"                  , addName "NSP Calculator"                            $ namedScratchpadAction SP.scratchPads "calculator")
+    , (        "M-S-w"                , addName "NSP WhatsApp"                              $ namedScratchpadAction SP.scratchPads "whatsapp")
     ] ^++^
 
     subKeys "Windows"
@@ -148,8 +151,10 @@ keybinds conf = let
     ]
 
 mousebinds :: (XConfig Layout -> M.Map (ButtonMask, Button) (Window -> X ()))
-mousebinds (XConfig {XMonad.modMask = modMask}) = M.fromList $
-  []
+mousebinds (XConfig {XMonad.modMask = myModMask}) = M.fromList $
+  [ ((myModMask, button1), (\w -> mouseWindow position w))
+  , ((myModMask, button3), (\w -> mouseWindow resize w))
+  ]
 
 -- Display keyboard mappings using zenity
 -- from https://github.com/thomasf/dotfiles-thomasf-xmonad/

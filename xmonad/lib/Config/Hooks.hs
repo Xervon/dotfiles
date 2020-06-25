@@ -108,7 +108,7 @@ fadeHook = composeAll
 startupHook :: X ()
 startupHook = do
   docksStartupHook
-  mapM_ spawnOnce C.autostart
+  mapM_ (\a -> fst a $ snd a) C.autostart
 
 -- from https://pbrisbin.com/posts/using_notify_osd_for_xmonad_notifications/
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)

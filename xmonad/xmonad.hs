@@ -14,6 +14,8 @@ import XMonad.Util.NamedActions
 import XMonad.Util.Run
 import XMonad.Wallpaper
 
+import System.Taffybar.Support.PagerHints (pagerHints)
+
 main = do
   xmproc <- spawnPipe C.bar
   setRandomWallpaper [ "$HOME/.dotfiles/bg" ]
@@ -21,6 +23,7 @@ main = do
     $ withNavigation2DConfig C.nav2DConf
     $ withUrgencyHook H.LibNotifyUrgencyHook
     $ ewmh
+    $ pagerHints
     $ addDescrKeys' ((C.modMask, xK_F1), K.showKeybindings) K.keybinds
     $ (myConfig xmproc)
         { handleEventHook    = H.eventHook $ myConfig xmproc

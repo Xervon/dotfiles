@@ -9,10 +9,13 @@ module Config.Defaults
 , terminal
 , lock
 , editor
+, webBrowser
 , snapshot
-, volumeGui
-, jackGui
-, musicPlayer
+, nsVolumeGui
+, nsMusicPlayer
+, nsSteam
+, nsCalculator
+, nsWhatsApp
 , font
 , smartGaps
 , outerGap
@@ -41,10 +44,11 @@ import Color
 
 import GHC.Word (Word32)
 
-import XMonad (Dimension, KeyMask, mod4Mask)
+import XMonad (Dimension, KeyMask, mod4Mask, X)
 import XMonad.Actions.Navigation2D
 import XMonad.Layout.Spacing (Border (..))
 import XMonad.Prompt hiding (font, promptBorderWidth)
+import XMonad.Util.SpawnOnce
 
 data Workspace
   = ZERO
@@ -61,12 +65,18 @@ data Workspace
 workspaces                   = [ DEV, QUTE, WEB, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO ]
 
 autostart                    =
-                             [ "/usr/bin/picom &"
-                             , "/usr/bin/unclutter &"
-                             , "/usr/bin/xautolock &"
-                             , "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &"
+                             [ (spawnOnce,              "/usr/bin/picom &")
+                             , (spawnOnce,              "/usr/bin/unclutter &")
+                             , (spawnOnce,              "/usr/bin/xautolock &")
+                             , (spawnOnce,              "/usr/bin/flameshot &")
+                             , (spawnOnce,              "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &")
+                             , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
+
+                             , (spawnOnce,              "/usr/bin/dex /usr/share/applications/steam.desktop")
+                             , (spawnOnOnce $ show WEB, "/usr/bin/dex /usr/share/applications/firefox.desktop")
                              ]
 
+-- bar                          = "/usr/bin/taffybar"
 bar                          = "\"$HOME/.xmonad/xmobar\""
 barAlpha                     = 215
 barHeight                    = 30
@@ -76,13 +86,16 @@ shell                        = [ "/usr/bin/tmux" ]
 -- terminal                     = "urxvtc -e " ++ (unwords shell)
 -- terminal                     = "alacritty"
 terminal                     = "$HOME/.xmonad/termonad"
-lock                         = "slock"
-editor                       = "emacsclient -c"
-snapshot                     = "flameshot gui"
+lock                         = "/usr/bin/slock"
+editor                       = "/usr/bin/emacsclient -c"
+webBrowser                   = "dex /usr/share/applications/firefox.desktop"
+snapshot                     = "/usr/bin/flameshot gui"
 
-volumeGui                    = ("dex /usr/share/applications/pavucontrol.desktop", "Pavucontrol")
-jackGui                      = ("dex /usr/share/applications/qjackctl.desktop"   , "QJackCtl")
-musicPlayer                  = ("dex /usr/share/applications/spotify.desktop"    , "Spotify")
+nsVolumeGui                  = ("dex /usr/share/applications/pavucontrol.desktop"  , "Pavucontrol")
+nsMusicPlayer                = ("dex /usr/share/applications/spotify.desktop"      , "Spotify")
+nsSteam                      = ("dex /usr/share/applications/steam.desktop"        , "Steam")
+nsCalculator                 = ("dex /usr/share/applications/qalculate-gtk.desktop", "Qalculate-gtk")
+nsWhatsApp                   = ("/usr/bin/env surf -LW 'whatsapp' 'https://web.whatsapp.com'", "whatsapp")
 
 font                         = Font "SourceCode Pro" 13 Regular True
 
@@ -117,7 +130,7 @@ nav2DConf                    = def
   , unmappedWindowRect     = [("Full", singleWindowRect)]
   }
 
-autostart                    :: [String]
+autostart                    :: [(String -> X (), String)]
 
 bar                          :: String
 barAlpha                     :: Int
@@ -128,11 +141,13 @@ shell                        :: [String]
 terminal                     :: String
 lock                         :: String
 editor                       :: String
+webBrowser                   :: String
 snapshot                     :: String
 
-volumeGui                    :: (String, String)
-jackGui                      :: (String, String)
-musicPlayer                  :: (String, String)
+nsVolumeGui                  :: (String, String)
+nsMusicPlayer                :: (String, String)
+nsSteam                      :: (String, String)
+nsCalculator                 :: (String, String)
 
 font                         :: Font
 

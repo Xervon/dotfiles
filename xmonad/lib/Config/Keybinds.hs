@@ -70,7 +70,7 @@ keybinds conf = let
     [ (        "M-<Space>"            , addName "Launcher"                                  $ shellPrompt $ P.autocomplete $ P.fuzzy P.defaultPrompt)
     , (        "M-<Return>"           , addName "Terminal"                                  $ spawn C.terminal)
     , (        "M-S-<Return>"         , addName "Editor"                                    $ spawn C.editor)
-    , (        "M-w"                  , addName "Web browser"                               $ spawn C.webBrowser)
+    , (        "M-C-<Return>"         , addName "Web browser"                               $ spawn C.webBrowser)
     ] ^++^
 
     subKeys "Scratchpads"

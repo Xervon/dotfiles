@@ -75,7 +75,7 @@ data ScratchpadConfig = ScratchpadConfig
 autostart                    =
   [ (spawnOnce,              "/usr/bin/picom &")
   , (spawnOnce,              "/usr/bin/unclutter &")
-  , (spawnOnce,              "/usr/bin/xautolock &")
+  , (spawnOnce,              "$HOME/.cache/dotfiles/bin/autolock &")
   , (spawnOnce,              "/usr/bin/flameshot &")
   , (spawnOnce,              "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &")
   , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
@@ -91,10 +91,8 @@ barHeight                    = 30
 barWidthPercent              = 95
 
 shell                        = [ "/usr/bin/tmux" ]
--- terminal                     = "urxvtc -e " ++ (unwords shell)
--- terminal                     = "alacritty"
 terminal                     = "$HOME/.xmonad/termonad"
-lock                         = "/usr/bin/slock"
+lock                         = "/usr/bin/dm-tool lock"
 editor                       = "/usr/bin/emacsclient -c"
 webBrowser                   = "dex /usr/share/applications/firefox.desktop"
 snapshot                     = "/usr/bin/flameshot gui"

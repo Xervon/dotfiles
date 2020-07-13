@@ -81,7 +81,6 @@ autostart                    =
   , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
 
   , (spawnOnce,              "/usr/bin/dex /usr/share/applications/steam.desktop")
-  , (spawnOnOnce $ show WEB, "/usr/bin/dex /usr/share/applications/firefox.desktop")
   ]
 
 -- bar                          = "/usr/bin/taffybar"

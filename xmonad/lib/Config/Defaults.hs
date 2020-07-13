@@ -91,18 +91,18 @@ barWidthPercent              = 95
 
 shell                        = [ "/usr/bin/tmux" ]
 terminal                     = "$HOME/.xmonad/termonad"
-lock                         = "/usr/bin/dm-tool lock"
-editor                       = "/usr/bin/emacsclient -c"
-webBrowser                   = "dex /usr/share/applications/firefox.desktop"
-snapshot                     = "/usr/bin/flameshot gui"
+lock                         = "/usr/bin/env dm-tool lock"
 autolockToggle               = "$HOME/.cache/dotfiles/bin/autolock toggle"
+editor                       = "/usr/bin/env emacsclient -c"
+webBrowser                   = "/usr/bin/env firefox"
+snapshot                     = "/usr/bin/env flameshot gui"
 
 namedScratchpads             =
-  [ ScratchpadConfig "volumegui"  "dex /usr/share/applications/pavucontrol.desktop"             (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
-  , ScratchpadConfig "spotify"    "dex /usr/share/applications/spotify.desktop"                 (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
-  , ScratchpadConfig "steam"      "dex /usr/share/applications/steam.desktop"                   (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
-  , ScratchpadConfig "calculator" "dex /usr/share/applications/qalculate-gtk.desktop"           (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
   , ScratchpadConfig "whatsapp"   "/usr/bin/env surf -LW 'whatsapp' 'https://web.whatsapp.com'" (className =? "whatsapp"     ) nonFloating     "M-w"   "WhatsApp"
+  [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
+  , ScratchpadConfig "spotify"    "/usr/bin/env dex /usr/share/applications/spotify.desktop"                                    (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
+  , ScratchpadConfig "steam"      "/usr/bin/env dex /usr/share/applications/steam.desktop"                                      (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
+  , ScratchpadConfig "calculator" "/usr/bin/env dex /usr/share/applications/qalculate-gtk.desktop"                              (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
   ]
 
 font                         = Font "SourceCode Pro" 13 Regular True

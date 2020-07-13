@@ -9,6 +9,7 @@ module Config.Defaults
 , shell
 , terminal
 , lock
+, autolockToggle
 , editor
 , webBrowser
 , snapshot
@@ -75,7 +76,6 @@ data ScratchpadConfig = ScratchpadConfig
 autostart                    =
   [ (spawnOnce,              "/usr/bin/picom &")
   , (spawnOnce,              "/usr/bin/unclutter &")
-  , (spawnOnce,              "$HOME/.cache/dotfiles/bin/autolock &")
   , (spawnOnce,              "/usr/bin/flameshot &")
   , (spawnOnce,              "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &")
   , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
@@ -96,6 +96,7 @@ lock                         = "/usr/bin/dm-tool lock"
 editor                       = "/usr/bin/emacsclient -c"
 webBrowser                   = "dex /usr/share/applications/firefox.desktop"
 snapshot                     = "/usr/bin/flameshot gui"
+autolockToggle               = "$HOME/.cache/dotfiles/bin/autolock toggle"
 
 namedScratchpads             =
   [ ScratchpadConfig "volumegui"  "dex /usr/share/applications/pavucontrol.desktop"             (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
@@ -148,6 +149,7 @@ barWidthPercent              :: Int
 shell                        :: [String]
 terminal                     :: String
 lock                         :: String
+autolockToggle               :: String
 editor                       :: String
 webBrowser                   :: String
 snapshot                     :: String

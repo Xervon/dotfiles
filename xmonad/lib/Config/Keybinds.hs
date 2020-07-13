@@ -60,6 +60,7 @@ keybinds conf = let
     [ (        "M-q"                  , addName "Restart XMonad"                            $ spawn "\"$HOME/.xmonad/rebuild.sh\" && xmonad --restart")
     , (        "M-S-q"                , addName "Quit XMonad"                               $ confirmPrompt P.dangerPrompt "Quit XMonad?" $ io (exitWith ExitSuccess))
     , (        "M-x"                  , addName "Lock screen"                               $ spawn C.lock)
+    , (        "M-S-x"                , addName "Switch autolock"                           $ spawn C.autolockToggle)
     ] ^++^
 
     subKeys "Actions"

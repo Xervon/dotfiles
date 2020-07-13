@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+if ! [ -z "$1" ]; then
+    if [ "$1" = "toggle" ]; then
+        if systemctl --user is-active autolock.service >/dev/null; then
+            systemctl --user stop autolock.service;
+        else
+            systemctl --user start autolock.service;
+        fi
+    fi
+    exit;
+fi
+
 # Only exported variables can be used within the timer's command.
 primary_display="$(xrandr | awk '/ connected/{print $1}' | head -n1)"
 

@@ -1,2 +1,15 @@
 # Skip the not really helping Ubuntu global compinit
 skip_global_compinit=1
+
+if [ -f "/etc/profile" ]; then
+	source "/etc/profile"
+fi
+if [ -d "/etc/profile.d" ]; then
+	source "/etc/profile.d/*.sh";
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
+
+export EDITOR="/usr/bin/emacsclient"
+export VISUAL="$EDITOR"
+

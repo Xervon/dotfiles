@@ -14,7 +14,7 @@ source "$ZINIT_HOME/zinit.zsh"
 
 printf '\n%.0s' {1..100};
 
-zinit ice lucid nocd atload'!source ~/.p10k.zsh'
+zinit ice lucid nocd atload="!source $XDG_CACHE_HOME/dotfiles/zsh/p10k.zsh"
 zinit load romkatv/powerlevel10k
 
 zinit lucid wait for \
@@ -29,6 +29,3 @@ zinit load zsh-users/zsh-autosuggestions
 
 zinit ice lucid wait atload="zicompinit; zicdreplay"
 zinit load zdharma/fast-syntax-highlighting
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -84,7 +84,7 @@ autostart                    =
   ]
 
 -- bar                          = "/usr/bin/taffybar"
-bar                          = "\"$HOME/.xmonad/xmobar\""
+bar                          = "$HOME/.xmonad/xmobar"
 barAlpha                     = 215
 barHeight                    = 30
 barWidthPercent              = 95

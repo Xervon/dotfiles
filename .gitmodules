@@ -1,9 +1,15 @@
 [submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
+	path   = dotbot
+	url    = https://github.com/anishathalye/dotbot
 [submodule "emacs.d"]
-	path = emacs.d
-	url = https://github.com/syl20bnr/spacemacs
+	path   = emacs.d
+	url    = https://github.com/syl20bnr/spacemacs
+	ignore = dirty
 [submodule "config/fish/fisher"]
-	path = config/fish/fisher
-	url = https://github.com/jorgebucaran/fisher
+	path   = config/fish/fisher
+	url    = https://github.com/jorgebucaran/fisher
+	ignore = dirty
+[submodule "zsh/zinit"]
+	path   = zsh/zinit
+	url    = https://github.com/zdharma/zinit
+	ignore = dirty

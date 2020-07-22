@@ -2,6 +2,8 @@ config/fish/conf.d
 config/fish/functions
 config/fish/completions
 
+config/psd/.psd.conf
+
 xmonad/**/*.o
 xmonad/**/*.hi
 xmonad/prompt-history

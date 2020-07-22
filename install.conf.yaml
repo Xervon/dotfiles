@@ -20,6 +20,7 @@
     ~/.config/bspwm: config/bspwm
     ~/.config/fish: config/fish
     ~/.config/neofetch: config/neofetch
+    ~/.config/psd: config/psd
     ~/.config/qutebrowser: config/qutebrowser
     ~/.config/rofi: config/rofi
     ~/.config/sxhkd: config/sxhkd

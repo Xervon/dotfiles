@@ -13,6 +13,8 @@
     ~/.xmonad:
     ~/.Xprofile:
     ~/.Xresources:
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
 
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
 

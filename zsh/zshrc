@@ -1,0 +1,34 @@
+#!/usr/bin/env zsh
+
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:=$HOME/.cache}"
+
+typeset -A ZINIT
+ZINIT_HOME="$XDG_CACHE_HOME/dotfiles/zsh/zinit"
+ZINIT[HOME_DIR]="$ZINIT_HOME"
+ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME/zsh/zcompdump"
+
+if ! [ -f "$ZINIT_HOME/zinit.zsh.zwc" ]; then
+    zcompile "$ZINIT_HOME/zinit.zsh";
+fi
+source "$ZINIT_HOME/zinit.zsh"
+
+printf '\n%.0s' {1..100};
+
+zinit ice lucid nocd atload'!source ~/.p10k.zsh'
+zinit load romkatv/powerlevel10k
+
+zinit lucid wait for \
+      willghatch/zsh-saneopt \
+      rupa/z                 \
+      mollifier/cd-gitroot   \
+      micha/resty            \
+      supercrabtree/k
+
+zinit ice lucid wait atload="_zsh_autosuggest_start"
+zinit load zsh-users/zsh-autosuggestions
+
+zinit ice lucid wait atload="zicompinit; zicdreplay"
+zinit load zdharma/fast-syntax-highlighting
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

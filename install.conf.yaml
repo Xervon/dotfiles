@@ -4,7 +4,7 @@
       relink: true
 
 - link:
-    ~/.cache/dotfiles: ''
+    ~/.cache/dotfiles:       ''
 
     ~/.emacs.d:
     ~/.spacemacs:
@@ -13,20 +13,20 @@
     ~/.xmonad:
     ~/.Xprofile:
     ~/.Xresources:
-    ~/.zshenv: zsh/zshenv
-    ~/.zshrc: zsh/zshrc
+    ~/.zshenv:               zsh/zshenv
+    ~/.zshrc:                zsh/zshrc
 
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
 
-    ~/.config/alacritty: config/alacritty
-    ~/.config/bspwm: config/bspwm
-    ~/.config/fish: config/fish
-    ~/.config/neofetch: config/neofetch
-    ~/.config/psd: config/psd
-    ~/.config/qutebrowser: config/qutebrowser
-    ~/.config/rofi: config/rofi
-    ~/.config/sxhkd: config/sxhkd
-    ~/.config/systemd: config/systemd
+    ~/.config/alacritty:     config/alacritty
+    ~/.config/bspwm:         config/bspwm
+    ~/.config/fish:          config/fish
+    ~/.config/neofetch:      config/neofetch
+    ~/.config/psd:           config/psd
+    ~/.config/qutebrowser:   config/qutebrowser
+    ~/.config/rofi:          config/rofi
+    ~/.config/sxhkd:         config/sxhkd
+    ~/.config/systemd:       config/systemd
 
 - shell:
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]

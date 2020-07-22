@@ -30,4 +30,4 @@
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]
     - [ /usr/bin/env fish -c 'fisher', Installing fish plugins ]
     - [ /usr/bin/env fish -c 'fish_update_completions', Update auto-generated fish completions ]
-    - [ "$HOME/.cache/dotfiles/xmonad/rebuild-xmobar.sh" ]
+    - [ "/home/xervon/.cache/dotfiles/xmonad/rebuild.sh" ]

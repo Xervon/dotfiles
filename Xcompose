@@ -1,0 +1,3 @@
+<Multi_key> <bracketleft> <bracketright> :	"☐"	U2610	# BALLOT BOX
+<Multi_key> <bracketleft> <slash> <bracketright>     :	 "☑"  U2611		# BALLOT BOX WITH CHECK
+<Multi_key> <bracketleft> <x> <bracketright>  :	 "☒"  U2612		# BALLOT BOX WITH X

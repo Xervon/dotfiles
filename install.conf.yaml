@@ -13,6 +13,7 @@
     ~/.xmonad:
     ~/.Xprofile:
     ~/.Xresources:
+    ~/.Xcompose:
     ~/.zshenv:               zsh/zshenv
     ~/.zshrc:                zsh/zshrc
 

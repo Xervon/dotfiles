@@ -32,3 +32,18 @@ zinit load zdharma/fast-syntax-highlighting
 
 alias l='k --no-vcs -h'
 alias k='k -h'
+
+# Define keybinds
+ZKBD_FILE="$HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}"
+
+if ! [ -f "$ZKBD_FILE" ]; then
+    autoload zkbd
+    zkbd
+fi
+
+if [ -f "$ZKBD_FILE" ]; then
+    source "$ZKBD_FILE"
+    [ -n "${key[Home]}" ]    && bindkey "${key[Home]}"    beginning-of-line
+    [ -n "${key[End]}" ]     && bindkey "${key[End]}"     end-of-line
+    [ -n "${key[Delete]}" ]  && bindkey "${key[Delete]}"  delete-char
+fi

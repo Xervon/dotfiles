@@ -29,3 +29,6 @@ zinit load zsh-users/zsh-autosuggestions
 
 zinit ice lucid wait atload="zicompinit; zicdreplay"
 zinit load zdharma/fast-syntax-highlighting
+
+alias l='k --no-vcs -h'
+alias k='k -h'

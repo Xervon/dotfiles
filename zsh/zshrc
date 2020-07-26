@@ -2,6 +2,21 @@
 
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:=$HOME/.cache}"
 
+# History configuration
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=999999999
+export SAVEHIST=999999999
+
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt INC_APPENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+# END History configuration
+
 typeset -A ZINIT
 ZINIT_HOME="$XDG_CACHE_HOME/dotfiles/zsh/zinit"
 ZINIT[HOME_DIR]="$ZINIT_HOME"

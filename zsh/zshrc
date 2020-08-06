@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+autoload -U select-word-style
+select-word-style bash
+
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:=$HOME/.cache}"
 
 # History configuration
@@ -9,7 +12,7 @@ export SAVEHIST=999999999
 
 setopt BANG_HIST
 setopt EXTENDED_HISTORY
-setopt INC_APPENDED_HISTORY
+setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
@@ -27,8 +30,6 @@ if ! [ -f "$ZINIT_HOME/zinit.zsh.zwc" ]; then
 fi
 source "$ZINIT_HOME/zinit.zsh"
 
-printf '\n%.0s' {1..100};
-
 zinit ice lucid nocd atload="!source $XDG_CACHE_HOME/dotfiles/zsh/p10k.zsh"
 zinit load romkatv/powerlevel10k
 
@@ -37,13 +38,17 @@ zinit lucid wait for \
       rupa/z                 \
       mollifier/cd-gitroot   \
       micha/resty            \
-      supercrabtree/k
+      supercrabtree/k        \
+      aperezdc/virtualz      \
+      Aloxaf/fzf-tab
 
 zinit ice lucid wait atload="_zsh_autosuggest_start"
 zinit load zsh-users/zsh-autosuggestions
 
-zinit ice lucid wait atload="zicompinit; zicdreplay"
-zinit load zdharma/fast-syntax-highlighting
+zinit lucid wait atload="zicompinit; zicdreplay" for \
+      zdharma/fast-syntax-highlighting \
+      zsh-users/zsh-completions \
+      ninrod/pass-zsh-completion
 
 alias l='k --no-vcs -h'
 alias k='k -h'

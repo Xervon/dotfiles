@@ -12,9 +12,10 @@
     ~/.tmux.conf:
     ~/.xinitrc:
     ~/.xmonad:
-    ~/.Xprofile:
-    ~/.Xresources:
-    ~/.Xcompose:
+    ~/.xprofile:
+    ~/.xresources:
+    ~/.xcompose:
+    ~/.profile:
     ~/.zshenv:               zsh/zshenv
     ~/.zshrc:                zsh/zshrc
 

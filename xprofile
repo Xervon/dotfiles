@@ -1,0 +1,4 @@
+export RXVT_SOCKET="/var/run/user/1000/urxvtd-localhost"
+
+xrdb -merge < "$HOME/.xresources"
+xrdb -merge < "$HOME/.xcompose"

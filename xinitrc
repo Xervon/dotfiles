@@ -1,7 +1,6 @@
 #!/bin/sh
 
-source "$HOME/.Xprofile"
-xrdb "$HOME/.Xresources"
+source "$HOME/.xprofile"
 
 # exec /usr/bin/bspwm
 # exec /usr/bin/xmonad

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+source $HOME/.cache/dotfiles/profile;
+source $HOME/.cache/dotfiles/xprofile;
+
+exec emacs --fg-daemon

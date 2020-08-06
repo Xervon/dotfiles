@@ -2,7 +2,7 @@
 Name=Emacs Daemon
 
 [Service]
-ExecStart=/usr/bin/emacs --fg-daemon
+ExecStart=/home/xervon/.cache/dotfiles/bin/emacs.startup
 Restart=always
 RestartSec=5
 

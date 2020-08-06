@@ -56,6 +56,7 @@ values."
      csharp
      ranger
      finance
+     pass
      (cmake :variables
             cmake-enable-cmake-ide-support t)
      (c-c++ :variables

@@ -1,3 +1,7 @@
 [user]
 	email = me@mde.de.com
 	name = Mika Dede
+	signingkey = 546586DC38D45BBD
+
+[commit]
+  gpgsign = true

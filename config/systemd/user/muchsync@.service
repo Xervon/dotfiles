@@ -1,0 +1,5 @@
+[Unit]
+Description=Sync email with mailserver
+
+[Service]
+ExecStart=/usr/bin/env muchsync %i

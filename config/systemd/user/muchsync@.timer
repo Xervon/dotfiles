@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically fetch mail
+
+[Timer]
+OnStartupSec=10s
+OnUnitActiveSec=1m
+Unit=muchsync@%i.service
+
+[Install]
+WantedBy=default.target

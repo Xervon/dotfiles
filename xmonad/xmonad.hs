@@ -1,8 +1,8 @@
-import qualified Config.Colors   as CC
-import qualified Config.Defaults as C
-import qualified Config.Hooks              as H
-import qualified Config.Layouts            as L
-import qualified Config.Keybinds           as K
+import qualified Config.Colors       as CC
+import qualified Config.Defaults     as C
+import qualified Config.Hooks        as H
+import qualified Config.Layouts      as L
+import qualified Config.Keybinds     as K
 
 import Color
 

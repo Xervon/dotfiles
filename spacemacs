@@ -350,6 +350,19 @@ you should place your code here."
   (unbind-key "M-/" evil-insert-state-map)
   (define-key evil-insert-state-map (kbd "M-j") 'hippie-expand)
 
+  (unbind-key "M-h" evil-normal-state-map)
+  (global-set-key (kbd "M-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "M-h") 'evil-window-left)
+  (unbind-key "M-j" evil-normal-state-map)
+  (global-set-key (kbd "M-j") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "M-j") 'evil-window-down)
+  (unbind-key "M-k" evil-normal-state-map)
+  (global-set-key (kbd "M-k") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "M-k") 'evil-window-up)
+  (unbind-key "M-l" evil-normal-state-map)
+  (global-set-key (kbd "M-l") 'evil-window-right)
+  (define-key evil-normal-state-map (kbd "M-l") 'evil-window-right)
+
   (setq-default ledger-mode-should-check-version      nil
                 ledger-report-links-in-register       nil
                 ledger-report-auto-width              nil

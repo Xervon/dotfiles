@@ -2,9 +2,9 @@
 Description=Periodically fetch mail
 
 [Timer]
-OnStartupSec=10s
+OnActiveSec=1m
 OnUnitActiveSec=1m
 Unit=muchsync@%i.service
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target

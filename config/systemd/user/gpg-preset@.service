@@ -1,0 +1,10 @@
+[Unit]
+Description=Preset gpg passphrase for key with keygrip %i
+Requires=gpg-agent.service
+After=gpg-agent.service
+
+[Service]
+RemainAfterExit=yes
+ExecStartPre=/home/xervon/.cache/dotfiles/bin/gpg-preset-passphrase.sh %i "Preset passphrase for key %i"
+ExecStart=/bin/true
+ExecStop=/usr/libexec/gpg-preset-passphrase --forget %i

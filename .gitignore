@@ -4,6 +4,9 @@ config/fish/completions
 
 config/psd/.psd.conf
 
+config/systemd/user/muchsync@*.service.d
+config/systemd/user/timers.target.wants/muchsync@*.timer
+
 xmonad/**/*.o
 xmonad/**/*.hi
 xmonad/prompt-history

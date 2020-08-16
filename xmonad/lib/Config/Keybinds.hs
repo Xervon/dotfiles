@@ -92,19 +92,6 @@ keybinds conf = let
       , (      "M-z m"              , addName "Focus master"                               $ windows W.focusMaster)
       , (      "M-z u"              , addName "Focus urgent"                               $ focusUrgent)
 
-      , (      "M1-j"               , addName "Focus next window"                          $ windows W.focusDown)
-      , (      "M1-k"               , addName "Focus previous window"                      $ windows W.focusUp)
-      , (      "M-M1-j"             , addName "Focus previous window"                      $ windows W.swapDown)
-      , (      "M-M1-k"             , addName "Focus previous window"                      $ windows W.swapUp)
-      , (      "M1-S-j"             , addName "Move previous window to current stack pos"  $ sequence_
-                                                                                              [ windows W.swapUp
-                                                                                              , windows W.focusDown
-                                                                                              ])
-      , (      "M1-S-k"             , addName "Move next window to current stack pos"      $ sequence_
-                                                                                              [ windows W.focusUp
-                                                                                              , windows W.swapDown
-                                                                                              ])
-
       , (      "M-["                , addName "Expand (L on BSP)"                         $ tryMsgR (ExpandTowards L) (Shrink))
       , (      "M-]"                , addName "Expand (R on BSP)"                         $ tryMsgR (ExpandTowards R) (Expand))
       , (      "M-S-["              , addName "Expand (U on BSP)"                         $ tryMsgR (ExpandTowards U) (MirrorShrink))

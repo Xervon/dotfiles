@@ -24,7 +24,6 @@
 
     ~/.config/alacritty:     config/alacritty
     ~/.config/bspwm:         config/bspwm
-    ~/.config/fish:          config/fish
     ~/.config/neofetch:      config/neofetch
     ~/.config/psd:           config/psd
     ~/.config/qutebrowser:   config/qutebrowser
@@ -34,6 +33,4 @@
 
 - shell:
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]
-    - [ /usr/bin/env fish -c 'fisher', Installing fish plugins ]
-    - [ /usr/bin/env fish -c 'fish_update_completions', Update auto-generated fish completions ]
     - [ "/home/xervon/.cache/dotfiles/xmonad/rebuild.sh" ]

@@ -5,10 +5,6 @@
 	path   = emacs.d
 	url    = https://github.com/syl20bnr/spacemacs
 	ignore = dirty
-[submodule "config/fish/fisher"]
-	path   = config/fish/fisher
-	url    = https://github.com/jorgebucaran/fisher
-	ignore = dirty
 [submodule "zsh/zinit"]
 	path   = zsh/zinit
 	url    = https://github.com/zdharma/zinit

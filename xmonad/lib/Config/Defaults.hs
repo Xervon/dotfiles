@@ -44,8 +44,9 @@ import GHC.Word (Word32)
 
 import XMonad (Dimension, KeyMask, mod4Mask, X)
 import XMonad.Actions.Navigation2D
-import XMonad.Config.Prime (ManageHook, Query, className, (=?))
+import XMonad.Config.Prime (ManageHook, Query, (=?))
 import XMonad.Layout.Spacing (Border (..))
+import XMonad.ManageHook (className, appName)
 import XMonad.Prompt hiding (font, promptBorderWidth)
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
@@ -94,15 +95,15 @@ terminal                     = "$HOME/.xmonad/termonad"
 lock                         = "/usr/bin/env dm-tool lock"
 autolockToggle               = "$HOME/.cache/dotfiles/bin/autolock toggle"
 editor                       = "/usr/bin/env emacsclient -c"
-webBrowser                   = "/usr/bin/env firefox"
+webBrowser                   = "/usr/bin/env qutebrowser -r default"
 snapshot                     = "/usr/bin/env flameshot gui"
 
 namedScratchpads             =
-  [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
-  , ScratchpadConfig "spotify"    "/usr/bin/env dex /usr/share/applications/spotify.desktop"                                    (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
-  , ScratchpadConfig "steam"      "/usr/bin/env dex /usr/share/applications/steam.desktop"                                      (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
-  , ScratchpadConfig "calculator" "/usr/bin/env dex /usr/share/applications/qalculate-gtk.desktop"                              (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
-  , ScratchpadConfig "whatsapp"   "/usr/bin/env firefox -P applets --kiosk --class 'whatsapp' --ssb 'https://web.whatsapp.com'" (className =? "whatsapp"     ) nonFloating     "M-w"   "WhatsApp"
+  [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                                                                   (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
+  , ScratchpadConfig "spotify"    "/usr/bin/env dex /usr/share/applications/spotify.desktop"                                                                                       (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
+  , ScratchpadConfig "steam"      "/usr/bin/env dex /usr/share/applications/steam.desktop"                                                                                         (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
+  , ScratchpadConfig "calculator" "/usr/bin/env dex /usr/share/applications/qalculate-gtk.desktop"                                                                                 (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
+  , ScratchpadConfig "whatsapp"   "/usr/bin/env qutebrowser --qt-arg name whatsapp --target window -B \"$HOME/.local/share/qutebrowser-whatsapp\" -R \"https://web.whatsapp.com\"" (appName =? "whatsapp")        nonFloating     "M-w"   "WhatsApp"
   ]
 
 font                         = Font "SourceCode Pro" 13 Regular True

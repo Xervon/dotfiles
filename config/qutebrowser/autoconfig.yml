@@ -7,4 +7,5 @@
 config_version: 2
 settings:
   content.notifications:
+    https://web.whatsapp.com: true
     https://www.reddit.com: false

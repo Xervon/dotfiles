@@ -13,7 +13,7 @@ import Color
 
 import XMonad
 import XMonad.Prompt
-import XMonad.Prompt.FuzzyMatch
+import XMonad.Prompt.CustomFuzzyMatch
 
 import Control.Arrow (first)
 import qualified Data.Map as M
@@ -70,8 +70,8 @@ dangerPrompt  = defaultPrompt
   }
 
 fuzzy :: XPConfig -> XPConfig
-fuzzy c = c { searchPredicate = fuzzyMatch
-            , sorter          = fuzzySort
+fuzzy c = c { searchPredicate = customFuzzyMatch
+            , sorter          = customFuzzySort
             }
 
 autocomplete :: XPConfig -> XPConfig

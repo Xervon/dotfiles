@@ -45,7 +45,7 @@ layoutHook = fullscreenFloat
            $ fullBarToggle
            $ mirrorToggle
            $ reflectToggle
-           $ onWorkspaces (map show [C.WEB, C.QUTE]) tallAccordion
+           $ onWorkspaces (map show [C.WEB]) tallAccordion
            $ (flex ||| tallAccordion ||| tabs)
   where
     reflectToggle     = MT.mkToggle (MT.single REFLECTX)

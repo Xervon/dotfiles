@@ -54,7 +54,7 @@ import XMonad.Util.SpawnOnce
 data Workspace
   = ZERO
   | DEV
-  | QUTE
+  | TWO
   | WEB
   | FOUR
   | FIVE
@@ -63,7 +63,7 @@ data Workspace
   | EIGHT
   | NINE
   deriving (Enum, Eq, Show, Read)
-workspaces                   = [ DEV, QUTE, WEB, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO ]
+workspaces                   = [ DEV, TWO, WEB, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO ]
 
 data ScratchpadConfig = ScratchpadConfig
   { name    :: String

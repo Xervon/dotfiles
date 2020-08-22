@@ -7,4 +7,4 @@ Environment=XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
 ExecStart=/home/xervon/.cache/dotfiles/bin/autolock
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical.target

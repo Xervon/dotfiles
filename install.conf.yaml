@@ -24,6 +24,7 @@
 
     ~/.config/alacritty:     config/alacritty
     ~/.config/bspwm:         config/bspwm
+    ~/.config/openbox:       config/openbox
     ~/.config/neofetch:      config/neofetch
     ~/.config/psd:           config/psd
     ~/.config/qutebrowser:   config/qutebrowser

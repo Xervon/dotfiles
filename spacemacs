@@ -36,6 +36,8 @@ values."
      javascript
      html
      react
+     vue
+     node
      python
      shell-scripts
      helm

@@ -2,6 +2,4 @@
 
 source "$HOME/.xprofile"
 
-# exec /usr/bin/bspwm
-# exec /usr/bin/xmonad
-exec /usr/bin/openbox-session
+exec "$HOME/.xmonad/xmonad-x86_64-linux"

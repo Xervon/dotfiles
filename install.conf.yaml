@@ -23,13 +23,11 @@
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
 
     ~/.config/alacritty:     config/alacritty
-    ~/.config/bspwm:         config/bspwm
     ~/.config/openbox:       config/openbox
     ~/.config/neofetch:      config/neofetch
     ~/.config/psd:           config/psd
     ~/.config/qutebrowser:   config/qutebrowser
     ~/.config/rofi:          config/rofi
-    ~/.config/sxhkd:         config/sxhkd
     ~/.config/systemd:       config/systemd
 
 - shell:

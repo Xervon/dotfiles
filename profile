@@ -15,3 +15,5 @@ export EDITOR="/usr/bin/emacsclient"
 export VISUAL="$EDITOR"
 
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
+source "$HOME/.cargo/env";

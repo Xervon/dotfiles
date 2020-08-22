@@ -83,7 +83,7 @@ keybinds conf = let
     ( [ (      "M-<Backspace>"      , addName "Close window"                               $ kill1)
       , (      "M-S-<Backspace>"    , addName "Kill all windows on current workspace"      $ confirmPrompt P.dangerPrompt "Kill all?" $ killAll)
 
-      , (      "M-S-d"                , addName "Toggle duplicated to all workspaces"        $ toggleCopyToAll)
+      , (      "M-S-d"              , addName "Toggle duplicated to all workspaces"        $ toggleCopyToAll)
 
       , (      "M-p"                , addName "Hide window to stack"                       $ withFocused hideWindow)
       , (      "M-S-p"              , addName "Restore window from stack"                  $ popNewestHiddenWindow)

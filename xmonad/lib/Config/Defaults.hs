@@ -80,7 +80,6 @@ data ScratchpadConfig = ScratchpadConfig
 autostart                    =
   [ (spawnOnce,              "/usr/bin/picom &")
   , (spawnOnce,              "/usr/bin/unclutter &")
-  , (spawnOnce,              "/usr/bin/flameshot &")
   , (spawnOnce,              "/usr/bin/trayer-srg --edge top --align right --width " ++ show (100 - barWidthPercent) ++ " --heighttype pixel --height " ++ show barHeight ++ " --transparent true --tint " ++ showCColor CC.base03 ++ " --alpha " ++ show (255 - barAlpha) ++ " &")
   , (spawnOnce,              "/usr/bin/dex /usr/share/applications/qjackctl.desktop")
 

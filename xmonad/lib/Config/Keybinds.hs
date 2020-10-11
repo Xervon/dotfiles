@@ -74,6 +74,7 @@ keybinds conf = let
     , (        "M-<Return>"           , addName "Terminal"                                  $ spawn C.terminal)
     , (        "M-S-<Return>"         , addName "Editor"                                    $ spawn C.editor)
     , (        "M-C-<Return>"         , addName "Web browser"                               $ spawn C.webBrowser)
+    , (        "M1-<Return>"          , addName "File Explorer"                             $ spawn C.fileBrowser)
     ] ^++^
 
     subKeys "Scratchpads"

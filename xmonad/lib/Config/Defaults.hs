@@ -13,6 +13,7 @@ module Config.Defaults
 , editor
 , webBrowser
 , snapshot
+, fileBrowser
 , namedScratchpads
 , font
 , emojiFont
@@ -98,6 +99,7 @@ autolockToggle               = "$HOME/.cache/dotfiles/bin/autolock toggle"
 editor                       = "/usr/bin/env emacsclient -c"
 webBrowser                   = "/usr/bin/env qutebrowser -r default"
 snapshot                     = "/usr/bin/env flameshot gui"
+fileBrowser                  = "/usr/bin/env xterm -e '/usr/bin/env ranger'"
 
 namedScratchpads             =
   [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                                                                   (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
@@ -157,6 +159,7 @@ autolockToggle               :: String
 editor                       :: String
 webBrowser                   :: String
 snapshot                     :: String
+fileBrowser                  :: String
 
 namedScratchpads             :: [ScratchpadConfig]
 

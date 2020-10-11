@@ -34,6 +34,7 @@ import XMonad.Util.Paste as P
 import XMonad.Util.Run
 import XMonad.Prompt.ConfirmPrompt
 import XMonad.Prompt.Shell
+import XMonad.Prompt.Unicode
 import XMonad.Prompt.Pass
 import qualified XMonad.StackSet as W
 
@@ -71,6 +72,7 @@ keybinds conf = let
     subKeys "Launchers"
     [ (        "M-<Space>"            , addName "Launcher"                                  $ shellPrompt $ P.fuzzy P.defaultPrompt)
     , (        "M-S-<Space>"          , addName "Copy Password"                             $ passPrompt $ P.fuzzy P.defaultPrompt)
+    , (        "M-C-<Space>"          , addName "Copy Unicode symbol"                       $ unicodePrompt C.unicodeDataPath P.defaultPrompt)
     , (        "M-<Return>"           , addName "Terminal"                                  $ spawn C.terminal)
     , (        "M-S-<Return>"         , addName "Editor"                                    $ spawn C.editor)
     , (        "M-C-<Return>"         , addName "Web browser"                               $ spawn C.webBrowser)

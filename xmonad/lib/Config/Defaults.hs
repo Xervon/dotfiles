@@ -32,6 +32,7 @@ module Config.Defaults
 , promptPosition
 , promptBorderWidth
 , promptAutoCompleteTimer
+, unicodeDataPath
 , modMask
 , workspaces
 , smallMonWidth
@@ -186,6 +187,8 @@ topBarHeight                 :: Word32
 promptPosition               :: XPPosition
 promptBorderWidth            :: Dimension
 promptAutoCompleteTimer      :: Maybe Int
+
+unicodeDataPath              :: String
 
 modMask                      :: KeyMask
 workspaces                   :: [Workspace]

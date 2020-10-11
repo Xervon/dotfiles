@@ -6,6 +6,10 @@
 
 config_version: 2
 settings:
+  content.autoplay:
+    global: false
   content.notifications:
-    https://web.whatsapp.com: true
+    https://www.aliexpress.com: false
     https://www.reddit.com: false
+  content.register_protocol_handler:
+    https://sogo.tuhh.de#!/Mail/0/INBOX/new?%25s: false

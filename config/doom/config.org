@@ -1,0 +1,21 @@
+* User Information
+#+BEGIN_SRC emacs-lisp
+(setq user-full-name "Mika Dede"
+      user-mail-address "me@mde.de.com")
+#+END_SRC
+
+* Set Font
+#+BEGIN_SRC emacs-lisp
+(setq doom-font (font-spec :family "Source Code Pro" :size 18 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "sans" :size 13))
+#+END_SRC
+
+* Set Theme
+#+BEGIN_SRC emacs-lisp
+(setq doom-theme 'doom-solarized-dark)
+#+END_SRC
+
+* Set Line Numbers
+#+BEGIN_SRC emacs-lisp
+(setq display-line-numbers-type 'relative)
+#+END_SRC

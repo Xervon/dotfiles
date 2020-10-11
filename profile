@@ -9,7 +9,7 @@ if [ -d "/etc/profile.d" ]; then
 	done
 fi
 
-export PATH="$HOME/.local/bin:$HOME/.cache/dotfiles/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cache/dotfiles/doom-emacs/bin:$HOME/.cache/dotfiles/bin:$PATH"
 
 export EDITOR="/usr/bin/emacsclient"
 export VISUAL="$EDITOR"

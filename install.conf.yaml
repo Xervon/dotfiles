@@ -6,8 +6,6 @@
 - link:
     ~/.cache/dotfiles:       ''
 
-    ~/.emacs.d:
-    ~/.spacemacs:
     ~/.gitconfig:
     ~/.tmux.conf:
     ~/.xinitrc:
@@ -29,7 +27,12 @@
     ~/.config/qutebrowser:   config/qutebrowser
     ~/.config/rofi:          config/rofi
     ~/.config/systemd:       config/systemd
+    ~/.config/emacs:         doom-emacs
+    ~/.config/doom:          config/doom
 
 - shell:
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]
     - [ "/home/xervon/.cache/dotfiles/xmonad/rebuild.sh" ]
+    - [ "doom sync" ]
+    - [ "doom env" ]
+    - [ "emacs -f all-the-icons-install-fonts" ]

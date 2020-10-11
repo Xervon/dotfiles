@@ -101,7 +101,7 @@ editor                       = "/usr/bin/env emacsclient -c"
 webBrowser                   = "/usr/bin/env qutebrowser -r default"
 snapshot                     = "/usr/bin/env flameshot gui"
 fileBrowser                  = "/usr/bin/env xterm -e '/usr/bin/env ranger'"
-mail                         = "/usr/bin/env emacsclient -cue '(notmuch-hello)'"
+mail                         = "/usr/bin/env emacsclient -cue '(notmuch-search \"tag:unread\")'"
 
 namedScratchpads             =
   [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                                                                             (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"

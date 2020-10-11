@@ -1,0 +1,5 @@
+DIRArr[0]="$HOME/.local/share/$browser"
+DIRArr[1]="$HOME/.local/share/$browser-whatsapp"
+PSNAME="$browser"
+
+check_suffix=1

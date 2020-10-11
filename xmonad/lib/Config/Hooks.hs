@@ -34,11 +34,8 @@ import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 
 forceCenterFloat :: ManageHook
-forceCenterFloat = doFloatDep move
+forceCenterFloat = doRectFloat $ W.RationalRect x y w h
   where
-    move :: W.RationalRect -> W.RationalRect
-    move _ = W.RationalRect x y w h
-
     w, h, x, y :: Rational
     w = 1/3
     h = 1/2
@@ -53,11 +50,12 @@ manageHook =
   <+> fullscreenManageHook
   <+> manageSpawn
   where
-    manageSpecific = composeAll
-      [ isDialog                   --> forceCenterFloat
+    manageSpecific = composeOne
+      [ isDialog                   -?> forceCenterFloat
       -- TODO: not working yet
-      , className =? "QJackCtl"    --> forceCenterFloat
-      , className =? "Pavucontrol" --> forceCenterFloat
+      , className =? "QJackCtl"    -?> forceCenterFloat
+      , className =? "Pavucontrol" -?> forceCenterFloat
+      , className =? "Gxmessage"   -?> doFloat
       ]
 
 eventHook :: XConfig l -> Event -> X All

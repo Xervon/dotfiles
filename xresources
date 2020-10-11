@@ -45,6 +45,9 @@ URxvt.cursorUnderline:      false
 ! Pointer
 URxvt.pointerBlank:         true
 
+xterm*faceName:             SourceCode Pro
+xterm*faceSize:             12
+
 !!Source http://github.com/altercation/solarized
 
 *background: #002b36

@@ -1,0 +1,8 @@
+[Unit]
+Description=IBUS Daemon
+
+[Service]
+ExecStart=/usr/bin/ibus-daemon
+
+[Install]
+WantedBy=graphical.target

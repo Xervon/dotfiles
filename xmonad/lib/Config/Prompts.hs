@@ -44,7 +44,7 @@ myPromptKeymap = M.fromList $
 
 defaultPrompt :: XPConfig
 defaultPrompt = def
-  { font                  = show C.font
+  { font                  = "xft:" ++ show C.font ++ "," ++ show C.emojiFont
   , bgColor               = showWebColor CC.base03
   , fgColor               = showWebColor CC.active
   , fgHLight              = showWebColor CC.base03

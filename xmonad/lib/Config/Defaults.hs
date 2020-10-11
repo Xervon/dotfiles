@@ -15,6 +15,7 @@ module Config.Defaults
 , snapshot
 , namedScratchpads
 , font
+, emojiFont
 , smartGaps
 , outerGap
 , isOuterGap
@@ -107,6 +108,7 @@ namedScratchpads             =
   ]
 
 font                         = Font "SourceCode Pro" 13 Regular True
+emojiFont                    = Font "Noto Emoji" 13 Regular True
 
 smartGaps                    = True
 outerGap                     = Border 5 5 5 5
@@ -126,6 +128,8 @@ topBarHeight                 = 10
 promptPosition               = Top
 promptBorderWidth            = 0
 promptAutoCompleteTimer      = Just 500
+
+unicodeDataPath              = "/usr/share/unicode-data/UnicodeData.txt"
 
 modMask                      = mod4Mask
 
@@ -157,6 +161,7 @@ snapshot                     :: String
 namedScratchpads             :: [ScratchpadConfig]
 
 font                         :: Font
+emojiFont                    :: Font
 
 smartGaps                    :: Bool
 outerGap                     :: Border

@@ -18,7 +18,7 @@ data Font = Font
   } deriving (Eq)
 
 instance Show Font where
-  showsPrec _ (Font n s st a) = showString $ "xft:" ++ n ++ ":size=" ++ (show s) ++ ":" ++ (lower $ show st) ++ ":antialias=" ++ (lower $ show a)
+  showsPrec _ (Font n s st a) = showString $ n ++ ":size=" ++ (show s) ++ ":" ++ (lower $ show st) ++ ":antialias=" ++ (lower $ show a)
     where
       lower (c:cs) = toLower c : (lower cs)
       lower ([])  = []

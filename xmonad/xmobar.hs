@@ -6,7 +6,7 @@ import Color
 import Xmobar
 
 config = defaultConfig
-  { font              = show C.font
+  { font              = "xft:" ++ show C.font
   , bgColor           = showWebColor $ CC.base03 { g = b CC.base03, b = g CC.base03 }
   , fgColor           = showWebColor CC.base0
   , alpha             = C.barAlpha

@@ -9,9 +9,9 @@ if [ -d "/etc/profile.d" ]; then
 	done
 fi
 
-export PATH="$HOME/.local/bin:$HOME/.cache/dotfiles/doom-emacs/bin:$HOME/.cache/dotfiles/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cache/dotfiles/emacs/doom/bin:$HOME/.cache/dotfiles/bin:$PATH"
 
-export EDITOR="/usr/bin/emacsclient"
+export EDITOR="/usr/bin/emacsclient -s default"
 export VISUAL="$EDITOR"
 
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"

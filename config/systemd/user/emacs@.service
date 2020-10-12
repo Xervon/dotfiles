@@ -1,0 +1,11 @@
+[Unit]
+Description=Emacs Daemon
+
+[Service]
+ExecStart=/home/xervon/.cache/dotfiles/bin/emacs.startup %i
+ExecStop=/usr/bin/emacsclient -s %i --eval "(kill-emacs)"
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

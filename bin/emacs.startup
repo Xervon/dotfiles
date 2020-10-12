@@ -3,4 +3,8 @@
 source $HOME/.cache/dotfiles/profile;
 source $HOME/.cache/dotfiles/xprofile;
 
-exec emacs --fg-daemon
+if [ -z "$1" ]; then
+	exec emacs --fg-daemon
+else
+	exec emacs --fg-daemon="$1" --with-profile "$1"
+fi

@@ -27,7 +27,8 @@
     ~/.config/qutebrowser:   config/qutebrowser
     ~/.config/rofi:          config/rofi
     ~/.config/systemd:       config/systemd
-    ~/.config/emacs:         doom-emacs
+    ~/.config/emacs:         config/emacs
+    ~/.config/chemacs:       config/chemacs
     ~/.config/doom:          config/doom
 
 - shell:

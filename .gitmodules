@@ -5,6 +5,9 @@
 	path   = zsh/zinit
 	url    = https://github.com/zdharma/zinit
 	ignore = dirty
-[submodule "doom-emacs"]
-	path = doom-emacs
+[submodule "config/emacs"]
+	path = config/emacs
+	url = https://github.com/plexus/chemacs2
+[submodule "emacs/doom"]
+	path = emacs/doom
 	url = https://github.com/hlissner/doom-emacs

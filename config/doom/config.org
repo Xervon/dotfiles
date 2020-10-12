@@ -4,6 +4,12 @@
       user-mail-address "me@mde.de.com")
 #+END_SRC
 
+* Set Leader Keys
+#+BEGIN_SRC emacs-lisp
+(setq doom-leader-key      "SPC"
+      doom-localleader-key ",")
+#+END_SRC
+
 * Set Font
 #+BEGIN_SRC emacs-lisp
 (setq doom-font (font-spec :family "Source Code Pro" :size 18 :weight 'semi-light)

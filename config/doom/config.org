@@ -25,3 +25,15 @@
 #+BEGIN_SRC emacs-lisp
 (setq display-line-numbers-type 'relative)
 #+END_SRC
+
+* Keybindings
+** Find file in dotfiles
+#+BEGIN_SRC emacs-lisp
+(defun find-file-in-dotfiles ()
+  (interactive)
+  (projectile-switch-project-by-name "~/.cache/dotfiles")
+  (projectile-find-file))
+
+(map! :leader
+      :desc "Find file in dotfiles" "e" #'find-file-in-dotfiles)
+#+END_SRC

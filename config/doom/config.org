@@ -12,7 +12,7 @@
 
 * Set Font
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Source Code Pro" :size 18 :weight 'semi-light)
+(setq doom-font (font-spec :family "Source Code Pro" :size 18 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "sans" :size 18))
 #+END_SRC
 

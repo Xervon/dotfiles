@@ -36,4 +36,10 @@
 
 (map! :leader
       :desc "Find file in dotfiles" "e" #'find-file-in-dotfiles)
+
+** Open Calendar (SPC o c)
+#+BEGIN_SRC emacs-lisp
+(map! :leader
+      (:prefix-map ("o" . "+open")
+       :desc "Calendar" "c" #'calendar))
 #+END_SRC

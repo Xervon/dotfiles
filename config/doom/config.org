@@ -43,8 +43,19 @@
 (map! :leader
       :desc "Find file in dotfiles" "e" #'find-file-in-dotfiles)
 
-** Open Calendar (SPC o c)
+* Calendar Config
+** Default Diary file
 #+BEGIN_SRC emacs-lisp
+(setq diary-file "~/diary")
+#+END_SRC
+
+** Open Calendar with (SPC o c)
+#+BEGIN_SRC emacs-lisp
+(defun calendar-open-mark-diary ()
+  (interactive)
+  (calendar)
+  (diary-mark-entries t))
+
 (map! :leader
        :desc "Calendar" "o c" #'calendar-open-mark-diary)
 #+END_SRC

@@ -4,6 +4,12 @@
       user-mail-address "me@mde.de.com")
 #+END_SRC
 
+* Mail Configuration
+#+BEGIN_SRC emacs-lisp
+(setq message-sendmail-f-is-evil nil
+      message-sendmail-envelope-from 'header)
+#+END_SRC
+
 * Set Leader Keys
 #+BEGIN_SRC emacs-lisp
 (setq doom-leader-key      "SPC"

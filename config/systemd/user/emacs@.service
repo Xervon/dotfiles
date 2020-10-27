@@ -3,7 +3,7 @@ Description=Emacs Daemon
 
 [Service]
 ExecStart=/home/xervon/.cache/dotfiles/bin/emacs.startup %i
-ExecStop=/usr/bin/emacsclient -s %i --eval "(kill-emacs)"
+ExecStop=/usr/bin/emacsclient -s %i --eval "(+workspace/kill-session-and-quit)"
 Restart=always
 RestartSec=5
 

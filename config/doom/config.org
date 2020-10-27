@@ -44,6 +44,10 @@
 (setq display-line-numbers-type 'relative)
 #+END_SRC
 
+** CamelCase Motion
+#+BEGIN_SRC emacs-lisp
+(global-subword-mode 1)
+#+END_SRC
 * Find file in dotfiles
 #+BEGIN_SRC emacs-lisp
 (defun find-file-in-dotfiles ()

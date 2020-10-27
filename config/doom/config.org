@@ -47,9 +47,9 @@
 ** Find file in dotfiles
 #+BEGIN_SRC emacs-lisp
 (defun find-file-in-dotfiles ()
-  (interactive)
-  (projectile-switch-project-by-name "~/.cache/dotfiles")
-  (projectile-find-file))
+ (interactive)
+ (cd "~/.cache/dotfiles")
+ (+default/find-file-under-here))
 
 (map! :leader
       :desc "Find file in dotfiles" "e" #'find-file-in-dotfiles)

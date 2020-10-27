@@ -38,13 +38,13 @@
 (setq doom-theme 'doom-solarized-dark)
 #+END_SRC
 
-* Set Line Numbers
+* Editor Configuration
+** Set Line Numbers
 #+BEGIN_SRC emacs-lisp
 (setq display-line-numbers-type 'relative)
 #+END_SRC
 
-* Keybindings
-** Find file in dotfiles
+* Find file in dotfiles
 #+BEGIN_SRC emacs-lisp
 (defun find-file-in-dotfiles ()
  (interactive)
@@ -53,6 +53,7 @@
 
 (map! :leader
       :desc "Find file in dotfiles" "e" #'find-file-in-dotfiles)
+#+END_SRC
 
 * Calendar Config
 ** Default Diary file

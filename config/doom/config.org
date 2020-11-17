@@ -12,12 +12,12 @@
 
 ** Open Notmuch with (SPC m)
 #+BEGIN_SRC emacs-lisp
-(defun notmuch-search-unread ()
+(defun my--notmuch-search-unread ()
   (interactive)
   (notmuch-search "tag:unread" t))
 
 (map! :leader
-      :desc "Unread Mails" "m" #'notmuch-search-unread)
+      :desc "Unread Mails" "m" #'my--notmuch-search-unread)
 #+END_SRC
 
 * Set Leader Keys
@@ -50,13 +50,13 @@
 #+END_SRC
 * Find file in dotfiles
 #+BEGIN_SRC emacs-lisp
-(defun find-file-in-dotfiles ()
+(defun my--find-file-in-dotfiles ()
  (interactive)
  (cd "~/.cache/dotfiles")
  (+default/find-file-under-here))
 
 (map! :leader
-      :desc "Find file in dotfiles" "e" #'find-file-in-dotfiles)
+      :desc "Find file in dotfiles" "e" #'my--find-file-in-dotfiles)
 #+END_SRC
 
 * Calendar Config
@@ -67,11 +67,11 @@
 
 ** Open Calendar with (SPC o c)
 #+BEGIN_SRC emacs-lisp
-(defun calendar-open-mark-diary ()
+(defun my--calendar-open-mark-diary ()
   (interactive)
   (calendar)
   (diary-mark-entries t))
 
 (map! :leader
-       :desc "Calendar" "o c" #'calendar-open-mark-diary)
+       :desc "Calendar" "o c" #'my--calendar-open-mark-diary)
 #+END_SRC

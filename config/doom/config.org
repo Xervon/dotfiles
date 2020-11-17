@@ -59,6 +59,12 @@
 #+BEGIN_SRC emacs-lisp
 (global-subword-mode 1)
 #+END_SRC
+
+** Disable evil-snipe
+#+BEGIN_SRC emacs-lisp
+(evil-snipe-mode 0)
+#+END_SRC
+
 * Find file in dotfiles
 #+BEGIN_SRC emacs-lisp
 (defun my--find-file-in-dotfiles ()

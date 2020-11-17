@@ -104,11 +104,11 @@ fileBrowser                  = "/usr/bin/env xterm -e '/usr/bin/env ranger'"
 mail                         = "/usr/bin/env emacsclient -s doom -cue '(my--notmuch-search-unread)'"
 
 namedScratchpads             =
-  [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                                                                             (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
-  , ScratchpadConfig "spotify"    "/usr/bin/env dex /usr/share/applications/spotify.desktop"                                                                                                 (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
-  , ScratchpadConfig "steam"      "/usr/bin/env dex /usr/share/applications/steam.desktop"                                                                                                   (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
-  , ScratchpadConfig "calculator" "/usr/bin/env dex /usr/share/applications/qalculate-gtk.desktop"                                                                                           (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
-  , ScratchpadConfig "whatsapp"   "/usr/bin/env qutebrowser --qt-arg name whatsapp --target window -B \"$HOME/.local/share/qutebrowser-whatsapp\" -R \"https://web.whatsapp.com\"" (appName =? "whatsapp")        nonFloating     "M-w"   "WhatsApp"
+  [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                                                (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"
+  , ScratchpadConfig "spotify"    "/usr/bin/env dex /usr/share/applications/spotify.desktop"                                                                    (className =? "Spotify"      ) nonFloating     "M-s"   "Spotify"
+  , ScratchpadConfig "steam"      "/usr/bin/env dex /usr/share/applications/steam.desktop"                                                                      (className =? "Steam"        ) nonFloating     "M-S-s" "Steam"
+  , ScratchpadConfig "calculator" "/usr/bin/env dex /usr/share/applications/qalculate-gtk.desktop"                                                              (className =? "Qalculate-gtk") defaultFloating "M-c"   "Calculator"
+  , ScratchpadConfig "whatsapp"   "/usr/bin/env qutebrowser --qt-arg name whatsapp --target window -B \"$HOME/.local/share/qutebrowser-whatsapp\" -r default"   (appName =? "whatsapp")        nonFloating     "M-w"   "WhatsApp"
   ]
 
 font                         = Font "SourceCode Pro" 13 Regular True

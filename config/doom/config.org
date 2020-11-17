@@ -76,7 +76,8 @@
       :desc "Find file in dotfiles" "e" #'my--find-file-in-dotfiles)
 #+END_SRC
 
-* Calendar Config
+* Org-Mode Configuration
+* Calendar Configuration
 ** Default Diary file
 #+BEGIN_SRC emacs-lisp
 (setq diary-file "~/diary")

@@ -43,7 +43,7 @@ import Termonad.Config.Colour
   , foregroundColour
   , palette
   )
-import Termonad.Config.Vec (Vec((:*), EmptyVec), N8)
+import Termonad.Config.Colour (List8, unsafeMkList8)
 import GI.Gio (noCancellable)
 import GI.GLib (SpawnFlags(SpawnFlagsDefault))
 import GI.Vte
@@ -90,29 +90,27 @@ solarizedDark =
     , palette = ExtendedPalette solarizedDark1 solarizedDark2
     }
   where
-    solarizedDark1 :: Vec N8 (AlphaColour Double)
-    solarizedDark1 =
-         getAlphaColour CC.base02
-      :* getAlphaColour CC.red
-      :* getAlphaColour CC.green
-      :* getAlphaColour CC.yellow
-      :* getAlphaColour CC.blue
-      :* getAlphaColour CC.magenta
-      :* getAlphaColour CC.cyan
-      :* getAlphaColour CC.base2
-      :* EmptyVec
+    solarizedDark1 :: List8 (AlphaColour Double)
+    solarizedDark1 = unsafeMkList8 [ getAlphaColour CC.base02
+                                   , getAlphaColour CC.red
+                                   , getAlphaColour CC.green
+                                   , getAlphaColour CC.yellow
+                                   , getAlphaColour CC.blue
+                                   , getAlphaColour CC.magenta
+                                   , getAlphaColour CC.cyan
+                                   , getAlphaColour CC.base2
+                                   ]
 
-    solarizedDark2 :: Vec N8 (AlphaColour Double)
-    solarizedDark2 =
-         getAlphaColour CC.base03
-      :* getAlphaColour CC.orange
-      :* getAlphaColour CC.base01
-      :* getAlphaColour CC.base00
-      :* getAlphaColour CC.base0
-      :* getAlphaColour CC.violet
-      :* getAlphaColour CC.base1
-      :* getAlphaColour CC.base3
-      :* EmptyVec
+    solarizedDark2 :: List8 (AlphaColour Double)
+    solarizedDark2 = unsafeMkList8 [ getAlphaColour CC.base03
+                             , getAlphaColour CC.orange
+                             , getAlphaColour CC.base01
+                             , getAlphaColour CC.base00
+                             , getAlphaColour CC.base0
+                             , getAlphaColour CC.violet
+                             , getAlphaColour CC.base1
+                             , getAlphaColour CC.base3
+                             ]
 
 solarizedLight :: ColourConfig (AlphaColour Double)
 solarizedLight =
@@ -122,29 +120,27 @@ solarizedLight =
     , palette = ExtendedPalette solarizedLight1 solarizedLight2
     }
   where
-    solarizedLight1 :: Vec N8 (AlphaColour Double)
-    solarizedLight1 =
-         getAlphaColour CC.base02
-      :* getAlphaColour CC.red
-      :* getAlphaColour CC.green
-      :* getAlphaColour CC.yellow
-      :* getAlphaColour CC.blue
-      :* getAlphaColour CC.magenta
-      :* getAlphaColour CC.cyan
-      :* getAlphaColour CC.base2
-      :* EmptyVec
+    solarizedLight1 :: List8 (AlphaColour Double)
+    solarizedLight1 = unsafeMkList8 [ getAlphaColour CC.base02
+                              , getAlphaColour CC.red
+                              , getAlphaColour CC.green
+                              , getAlphaColour CC.yellow
+                              , getAlphaColour CC.blue
+                              , getAlphaColour CC.magenta
+                              , getAlphaColour CC.cyan
+                              , getAlphaColour CC.base2
+                              ]
 
-    solarizedLight2 :: Vec N8 (AlphaColour Double)
-    solarizedLight2 =
-         getAlphaColour CC.base03
-      :* getAlphaColour CC.orange
-      :* getAlphaColour CC.base01
-      :* getAlphaColour CC.base00
-      :* getAlphaColour CC.base0
-      :* getAlphaColour CC.violet
-      :* getAlphaColour CC.base1
-      :* getAlphaColour CC.base3
-      :* EmptyVec
+    solarizedLight2 :: List8 (AlphaColour Double)
+    solarizedLight2 = unsafeMkList8 [ getAlphaColour CC.base03
+                              , getAlphaColour CC.orange
+                              , getAlphaColour CC.base01
+                              , getAlphaColour CC.base00
+                              , getAlphaColour CC.base0
+                              , getAlphaColour CC.violet
+                              , getAlphaColour CC.base1
+                              , getAlphaColour CC.base3
+                              ]
 
 fontConf :: FontConfig
 fontConf =

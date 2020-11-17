@@ -9,6 +9,8 @@ config/systemd/user/timers.target.wants/muchsync@*.timer
 
 config/doom/config.el
 
+config/qutebrowser/qsettings
+
 xmonad/**/*.o
 xmonad/**/*.hi
 xmonad/prompt-history

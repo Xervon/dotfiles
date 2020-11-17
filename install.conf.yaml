@@ -21,19 +21,20 @@
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
 
     ~/.config/alacritty:     config/alacritty
-    ~/.config/openbox:       config/openbox
+    ~/.config/chemacs:       config/chemacs
+    ~/.config/doom:          config/doom
+    ~/.config/emacs:         config/emacs
+    ~/.config/ion:           config/ion
     ~/.config/neofetch:      config/neofetch
+    ~/.config/openbox:       config/openbox
     ~/.config/psd:           config/psd
     ~/.config/qutebrowser:   config/qutebrowser
     ~/.config/rofi:          config/rofi
     ~/.config/systemd:       config/systemd
-    ~/.config/emacs:         config/emacs
-    ~/.config/chemacs:       config/chemacs
-    ~/.config/doom:          config/doom
 
 - shell:
     - [ /usr/bin/env git submodule update --init --recursive, Installing submodules ]
     - [ "/home/xervon/.cache/dotfiles/xmonad/rebuild.sh" ]
     - [ "doom sync" ]
     - [ "doom env" ]
-    - [ "emacs -f all-the-icons-install-fonts" ]
+    - [ "emacs --with-profile doom -f all-the-icons-install-fonts" ]

@@ -20,6 +20,17 @@
       :desc "Unread Mails" "m" #'my--notmuch-search-unread)
 #+END_SRC
 
+** Compose mail with (C-x m)
+#+BEGIN_SRC emacs-lisp
+(map! :prefix "C-x"
+      :desc "Compose mail" "m" #'+notmuch/compose)
+#+END_SRC
+
+** Set Fcc Header
+#+BEGIN_SRC emacs-lisp
+(setq notmuch-fcc-dirs "sent +sent -unread")
+#+END_SRC
+
 * Set Leader Keys
 #+BEGIN_SRC emacs-lisp
 (setq doom-leader-key      "SPC"

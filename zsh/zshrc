@@ -53,6 +53,8 @@ zinit lucid wait atload="zicompinit; zicdreplay" for \
 alias l='k --no-vcs -h'
 alias k='k -h'
 
+alias e='emacsclient --socket-name "doom"'
+
 # Define keybinds
 ZKBD_FILE="$HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}"
 

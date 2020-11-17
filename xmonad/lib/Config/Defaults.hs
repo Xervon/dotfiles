@@ -97,11 +97,11 @@ shell                        = [ "/usr/bin/tmux" ]
 terminal                     = "$HOME/.xmonad/termonad"
 lock                         = "/usr/bin/env dm-tool lock"
 autolockToggle               = "$HOME/.cache/dotfiles/bin/autolock toggle"
-editor                       = "/usr/bin/env emacsclient -s default -c"
+editor                       = "/usr/bin/env emacsclient -s doom -c"
 webBrowser                   = "/usr/bin/env qutebrowser -r default"
 snapshot                     = "/usr/bin/env flameshot gui"
 fileBrowser                  = "/usr/bin/env xterm -e '/usr/bin/env ranger'"
-mail                         = "/usr/bin/env emacsclient -s default -cue '(notmuch-search-unread)'"
+mail                         = "/usr/bin/env emacsclient -s doom -cue '(my--notmuch-search-unread)'"
 
 namedScratchpads             =
   [ ScratchpadConfig "volumegui"  "/usr/bin/env dex /usr/share/applications/pavucontrol.desktop"                                                                                             (className =? "Pavucontrol"  ) defaultFloating "M-v"   "Pulse Config"

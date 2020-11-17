@@ -1,0 +1,10 @@
+eval $(starship init ion)
+
+keybindings vi
+
+let HISTORY_IGNORE = [ whitespace duplicates ]
+let HISTORY_SIZE = 20000
+let HISTFILE_SIZE = 20000
+let HISTORY_TIMESTAMP = 1
+
+alias l="ls -lahtp"

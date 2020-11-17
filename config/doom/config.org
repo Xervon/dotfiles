@@ -77,6 +77,63 @@
 #+END_SRC
 
 * Org-Mode Configuration
+** Epresent
+*** Setup
+#+BEGIN_SRC emacs-lisp
+(use-package! epresent)
+#+END_SRC
+
+*** Start/Stop Presentation
+#+BEGIN_SRC emacs-lisp :capture no
+(after! epresent
+  (defun my--epresent-run ()
+    (interactive)
+    (let ((present-buffer (current-buffer))
+          (frame (epresent--get-frame)))
+      (select-frame frame)
+      (switch-to-buffer (make-temp-name "epresent-"))
+      (insert-buffer present-buffer)
+      (toggle-frame-fullscreen)
+      (epresent-mode)
+      (evil-force-normal-state)))
+  (advice-add 'epresent-run :override #'my--epresent-run)
+
+  (defun my--epresent-quit (orig-fun &rest args)
+    (let ((frame (epresent--get-frame)))
+      (apply orig-fun args)
+      (kill-buffer)
+      (delete-frame frame)))
+  (advice-add 'epresent-quit :around #'my--epresent-quit))
+#+END_SRC
+
+#+RESULTS:
+
+*** Keybindings
+#+BEGIN_SRC emacs-lisp
+(map! :map epresent-mode-map
+      :n "q"    #'epresent-quit
+      :n "t"    #'epresent-top
+      :n "j"    #'scroll-up
+      :n "k"    #'scroll-down
+      :n "l"    #'epresent-next-page
+      :n "h"    #'epresent-previous-page
+      :n "g"    #'epresent-jump-to-page
+
+      :n "x"    #'org-babel-execute-src-block
+      :n "c"    #'epresent-next-src-block
+      :n "C"    #'epresent-next-src-block
+      :n "s"    #'epresent-toggle-hide-src-block
+      :n "S"    #'epresent-toggle-hide-src-blocks
+      :n "e"    #'org-edit-src-code
+
+      :n "[f5]" #'epresent-edit-text
+
+      :n "+"    #'epresent-increase-inner-border
+      :n "-"    #'epresent-decrease-inner-border)
+#+END_SRC
+
+#+RESULTS:
+
 * Calendar Configuration
 ** Default Diary file
 #+BEGIN_SRC emacs-lisp

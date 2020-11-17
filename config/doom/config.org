@@ -150,3 +150,9 @@
 (map! :leader
        :desc "Calendar" "o c" #'my--calendar-open-mark-diary)
 #+END_SRC
+
+* Printer Configuration
+#+BEGIN_SRC emacs-lisp
+(setq lpr-command "gtklp"
+      ps-lpr-command "gtklp")
+#+END_SRC
